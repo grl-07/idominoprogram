@@ -10,8 +10,6 @@ import Dominio.Jugador;
  *
  * @author Mi PC
  */
-//Esto es una modificacion
-
 public class Main {
 
     public static void main(String[] args) {
