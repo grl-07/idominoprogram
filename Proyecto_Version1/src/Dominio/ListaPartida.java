@@ -29,6 +29,8 @@ public class ListaPartida {
     {
         l_partidas.remove(laPartida);
     }
-    
+
+
+
 
 }

@@ -75,8 +75,17 @@ public class ListaPieza {
         return miListaPieza.add(objeto);
     }
 
+    public Pieza obtenerPieza()
+    {
+        if (miListaPieza != null)
+            return miListaPieza.get(0);
+        return null;
+    }
 
-    //agregarPieza(new Pieza("0", "1"));
+    public boolean quitarPieza(Pieza objeto)
+    {
+        return miListaPieza.remove(objeto);
+    }
 
     public List<Pieza> getMiListaPieza() {
         return miListaPieza;
