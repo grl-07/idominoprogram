@@ -4,11 +4,13 @@
  */
 
 package Logica;
-
+import Dominio.*;
 /**
  *
  * @author Blacky G
  */
+// declarando los objetos con las clases de dominio
 public class Comunicacion {
-    
+
+  ListaJugador Registro_Jugadores = new ListaJugador();
 }
