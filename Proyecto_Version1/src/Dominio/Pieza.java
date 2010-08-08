@@ -19,6 +19,29 @@ public class Pieza {
         this.pintainferior = pintainferior;
     }
 
+    public Pieza()
+    {
+        this.pintaSuperior = pintaSuperior;
+        this.pintainferior = pintainferior;
+    }
+
+    public int getPintaSuperior() {
+        return pintaSuperior;
+    }
+
+    public void setPintaSuperior(int pintaSuperior) {
+        this.pintaSuperior = pintaSuperior;
+    }
+
+    public int getPintainferior() {
+        return pintainferior;
+    }
+
+    public void setPintainferior(int pintainferior) {
+        this.pintainferior = pintainferior;
+    }
+
+
 
 
 }
