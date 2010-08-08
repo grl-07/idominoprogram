@@ -1,5 +1,6 @@
 package Menu;
-import Dominio.Jugador;
+import Dominio.ListaPieza;
+import Dominio.*;
 
 /*
  * To change this template, choose Tools | Templates
@@ -18,6 +19,10 @@ public class Main {
                 
       elJugador = new Jugador("nanhh","jj","df","kj",3,3,1,1,"hjk","ew","dsd");
       System.out.println(elJugador);
+
+      ListaPieza miListaPieza = new ListaPieza();
+      miListaPieza.Shuffle();
+
 
 
 
