@@ -23,6 +23,9 @@ public class Main {
       ListaPieza miListaPieza = new ListaPieza();
       miListaPieza.Shuffle();
 
+      Partida hola = new Partida(1);
+      hola.repartirPieza();
+
 
 
 
