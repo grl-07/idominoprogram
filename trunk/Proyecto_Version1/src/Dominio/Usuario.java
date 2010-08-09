@@ -13,7 +13,7 @@ public class Usuario {
     protected  String nombre;
     protected  String apellido;
     protected  String cedula;
-    protected  String fecha_nac; //fecha de nacimiento
+    protected  String fechaNaci; //fecha de nacimiento
     protected  int score;
     protected  int Cont_ingreso;
     protected  int partidas_creadas;
@@ -26,7 +26,7 @@ public class Usuario {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
-        this.fecha_nac= fecha_nac;
+        this.fechaNaci= fecha_nac;
         this.score= score;
         this.Cont_ingreso= cont_ingreso;
         this.partidas_creadas= partidas_creadas;
@@ -44,7 +44,7 @@ public class Usuario {
     }
 
     public String getFecha_nac() {
-        return fecha_nac;
+        return fechaNaci;
     }
 
     public String getNombre() {
@@ -65,7 +65,7 @@ public class Usuario {
     }
 
     public void setFecha_nac(String fecha_nac) {
-        this.fecha_nac = fecha_nac;
+        this.fechaNaci = fecha_nac;
     }
 
     public void setNombre(String nombre) {
