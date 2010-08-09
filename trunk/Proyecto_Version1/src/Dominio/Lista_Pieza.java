@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author Diego
  */
-public class ListaPieza {
+public class Lista_Pieza {
 
     public List <Pieza> miListaPieza;
 
@@ -21,21 +21,65 @@ public class ListaPieza {
 
 
 
-    public ListaPieza()
+    public Lista_Pieza()
     {
         miListaPieza = new ArrayList();
+
+    }
+
+    public void llenar()
+    {
         int control = 0;
         for (int i = 0; i <= 6; i++){
-            for (int j = control; j <= 6; j++){
+            for (int j = control; j <= 6; j++)
+            {
                Pieza a = new Pieza(i,j);
                miListaPieza.add(a);
-               System.out.println("pieza: " + i + -j);
-        }
+               //System.out.println("pieza: " + i + "-" + j);
+            }
             control++;
+
         }
     }
 
-    public void imprimirColeccion(ListaPieza Coleccion)
+
+    public void imprimirColeccion()
+    {
+        int i;
+        Pieza registro;
+
+        /*
+         * Se define un arreglo de tipo Object (la clase genérica Java)
+         */
+        Object [] arreglo;
+
+        /*
+         * Se convierte la colección pasada como parámetro a un array, que
+         * es asignado al arreglo de tipo Object
+         */
+        arreglo = miListaPieza.toArray();
+
+        System.out.println("Piezas");
+
+        /*
+         * Se hace un recorrido del arreglo de tipo Object y se imprime
+         * la información de la casilla i
+         */
+        for(i=0 ; i<arreglo.length ; i++)
+        {
+            registro = (Pieza) arreglo[i];
+            System.out.println("Pinta superior: " + registro.getPintaSuperior());
+            System.out.println("Pinta inferior: " + registro.getPintainferior());
+            System.out.println();
+        }
+
+        System.out.println("\n\n");
+    }
+
+
+
+
+    public void imprimirPiezas()
     {
         int i;
         Pieza registro;
@@ -106,9 +150,9 @@ public class ListaPieza {
     public void Shuffle()
     {
         Collections.shuffle(miListaPieza);
-        imprimirColeccion();
+        //imprimirColeccion();
 
-        
+
 
     }
 
