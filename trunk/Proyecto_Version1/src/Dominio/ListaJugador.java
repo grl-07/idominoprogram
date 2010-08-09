@@ -110,7 +110,7 @@ public class ListaJugador {
      *a un usuario recibiendo el nombre y el NickName del mismo
      *si se encuentra en la lista retorna TRUE
     */
-    public boolean buscar (String nombre,String nickName){
+    public Jugador buscar_jugador (String nombre,String nickName){
         int i = 0;
         Object[] a = ElJugador.toArray();
         Jugador buscado = null;
@@ -120,10 +120,10 @@ public class ListaJugador {
             String nom = buscado.getNombre();
             String nick = buscado.getNickname();
             if ((nom.equals(nombre) == true) && (nick.equals(nickName) == true))
-               return true;
+               return buscado;
             i++;
         }
-        return false;
+        return null;
 }
 
 

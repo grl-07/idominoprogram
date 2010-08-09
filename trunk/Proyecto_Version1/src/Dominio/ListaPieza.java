@@ -35,7 +35,7 @@ public class ListaPieza {
         }
     }
 
-    public void imprimirColeccion()
+    public void imprimirColeccion(ListaPieza Coleccion)
     {
         int i;
         Pieza registro;
