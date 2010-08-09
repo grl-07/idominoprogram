@@ -1,5 +1,5 @@
 package Menu;
-import Dominio.ListaPieza;
+import Dominio.Lista_Pieza;
 import Dominio.*;
 
 /*
@@ -13,14 +13,15 @@ import Dominio.*;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         Jugador elJugador;
                 
       elJugador = new Jugador("nanhh","jj","df","kj",3,3,1,1,"hjk","ew","dsd");
       System.out.println(elJugador);
 
-      ListaPieza miListaPieza = new ListaPieza();
+      Lista_Pieza miListaPieza = new Lista_Pieza();
       miListaPieza.Shuffle();
 
       Partida hola = new Partida(1);
@@ -28,8 +29,7 @@ public class Main {
 
 
 
-
- }
+    }
 
   
 }

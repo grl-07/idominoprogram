@@ -5,6 +5,7 @@
 
 package Dominio;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -14,19 +15,19 @@ public class Partida {
     private int id_partida;
     private Calendar fecha_inicio;
     private Calendar fecha_actual;
-    private ListaPieza jugador1;
-    private ListaPieza jugador2;
-    private ListaPieza pote;
+    private Lista_Pieza jugador1;
+    private Lista_Pieza jugador2;
+    private Lista_Pieza pote;
 
 
     public Partida(int id_partida/*, Calendar fecha_inicio, Calendar fecha_actual*/)
     {
         this.id_partida = id_partida;
-        //this.fecha_inicio = fecha_inicio;
-        //this.fecha_actual = fecha_actual;
-        jugador1 = new ListaPieza();
-        jugador2 = new ListaPieza();
-        pote = new ListaPieza();
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_actual = fecha_actual;
+        jugador1 = new Lista_Pieza();
+        jugador2 = new Lista_Pieza();
+        pote = new Lista_Pieza();
     }
 
     public Calendar getFecha_actual() {
@@ -56,7 +57,8 @@ public class Partida {
     public boolean repartirPieza()
     {
         int i=0;
-        ListaPieza Piezas = new ListaPieza();
+        Lista_Pieza Piezas = new Lista_Pieza();
+        Piezas.llenar();
         Piezas.Shuffle();
         Pieza agregada;
         for (i=0; i<=13; i++)
@@ -66,6 +68,7 @@ public class Partida {
                 agregada = Piezas.obtenerPieza();
                 jugador1.agregarPieza(agregada);
                 Piezas.quitarPieza(agregada);
+
             }
             else
             {
@@ -76,14 +79,18 @@ public class Partida {
                 //<>
         }
         pote = Piezas;
-        Piezas.imprimirColeccion();
+        pote.imprimirColeccion();
+        System.out.println("jugador1");
+        jugador1.imprimirColeccion();
+        System.out.println("jugador2");
+        jugador2.imprimirColeccion();
+
         return (false);
 
 
     }
 
 
-    
 
 
 }
