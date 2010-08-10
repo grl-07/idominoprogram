@@ -4,21 +4,21 @@
  */
 
 /*
- * Crear_Cargar_Partida.java
+ * Ventana_Crear_Cargar_Partida.java
  *
- * Created on 09-ago-2010, 12:39:14
+ * Created on 08/08/2010, 11:31:38 PM
  */
 
 package Interface;
 
 /**
  *
- * @author Blacky G
+ * @author Robert
  */
-public class Crear_Cargar_Partida extends javax.swing.JFrame {
+public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
 
-    /** Creates new form Crear_Cargar_Partida */
-    public Crear_Cargar_Partida() {
+    /** Creates new form Ventana_Crear_Cargar_Partida */
+    public Ventana_Crear_Cargar_Partida() {
         initComponents();
     }
 
@@ -31,12 +31,15 @@ public class Crear_Cargar_Partida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLayeredPane1 = new javax.swing.JLayeredPane();
         jBCrearr_P = new javax.swing.JButton();
         jBCargar_P = new javax.swing.JButton();
         jBSalir_cuenta = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Menu");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFocusCycleRoot(false);
+        setName("JFCrear_Cargar_Partida"); // NOI18N
 
         jBCrearr_P.setText("Crear Partida");
         jBCrearr_P.addActionListener(new java.awt.event.ActionListener() {
@@ -44,8 +47,6 @@ public class Crear_Cargar_Partida extends javax.swing.JFrame {
                 jBCrearr_PActionPerformed(evt);
             }
         });
-        jBCrearr_P.setBounds(113, 160, 180, 23);
-        jLayeredPane1.add(jBCrearr_P, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jBCargar_P.setText("Cargar Partida");
         jBCargar_P.addActionListener(new java.awt.event.ActionListener() {
@@ -53,44 +54,60 @@ public class Crear_Cargar_Partida extends javax.swing.JFrame {
                 jBCargar_PActionPerformed(evt);
             }
         });
-        jBCargar_P.setBounds(113, 220, 180, 23);
-        jLayeredPane1.add(jBCargar_P, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jBSalir_cuenta.setText("Cerrar Sesion");
-        jBSalir_cuenta.setBounds(113, 280, 180, 23);
-        jLayeredPane1.add(jBSalir_cuenta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBSalir_cuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalir_cuentaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jBCrearr_P, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBSalir_cuenta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBCargar_P, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jBCrearr_P)
+                .addGap(18, 18, 18)
+                .addComponent(jBCargar_P, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBSalir_cuenta)
+                .addGap(47, 47, 47))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-474)/2, (screenSize.height-526)/2, 474, 526);
+        setBounds((screenSize.width-221)/2, (screenSize.height-270)/2, 221, 270);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCrearr_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearr_PActionPerformed
-       
-    }//GEN-LAST:event_jBCrearr_PActionPerformed
+
+}//GEN-LAST:event_jBCrearr_PActionPerformed
 
     private void jBCargar_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCargar_PActionPerformed
-         //LO QUE HARA EL BOTON
-        Cargar_Partida Ventana = new Cargar_Partida();
+        //LO QUE HARA EL BOTON
+        Ventana_Cargar_Partida Ventana = new Ventana_Cargar_Partida();
         Ventana.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jBCargar_PActionPerformed
+}//GEN-LAST:event_jBCargar_PActionPerformed
+
+    private void jBSalir_cuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalir_cuentaActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        VentanaInicio verVentana = new VentanaInicio();
+        verVentana.setVisible(true);
+
+    }//GEN-LAST:event_jBSalir_cuentaActionPerformed
 
     /**
     * @param args the command line arguments
@@ -98,7 +115,7 @@ public class Crear_Cargar_Partida extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Crear_Cargar_Partida().setVisible(true);
+                new Ventana_Crear_Cargar_Partida().setVisible(true);
             }
         });
     }
@@ -107,7 +124,6 @@ public class Crear_Cargar_Partida extends javax.swing.JFrame {
     private javax.swing.JButton jBCargar_P;
     private javax.swing.JButton jBCrearr_P;
     private javax.swing.JButton jBSalir_cuenta;
-    private javax.swing.JLayeredPane jLayeredPane1;
     // End of variables declaration//GEN-END:variables
 
 }

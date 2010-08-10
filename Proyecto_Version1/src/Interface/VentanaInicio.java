@@ -15,10 +15,10 @@ package Interface;
  *
  * @author Robert
  */
-public class VentnaInicio extends javax.swing.JFrame {
+public class VentanaInicio extends javax.swing.JFrame {
 
     /** Creates new form Inicio */
-    public VentnaInicio() {
+    public VentanaInicio() {
         initComponents();
     }
 
@@ -43,37 +43,45 @@ public class VentnaInicio extends javax.swing.JFrame {
         setTitle("INICIO iDOMINO");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setFont(new java.awt.Font("Comic Sans MS", 0, 10)); // NOI18N
+        setFont(new java.awt.Font("Comic Sans MS", 0, 10));
         setLocationByPlatform(true);
         setName("jFVentanaInicio"); // NOI18N
         setResizable(false);
 
-        jLTitulo_iDomino.setFont(new java.awt.Font("Comic Sans MS", 2, 18)); // NOI18N
+        jLTitulo_iDomino.setFont(new java.awt.Font("Comic Sans MS", 2, 18));
         jLTitulo_iDomino.setText("   iDomino");
-        jLTitulo_iDomino.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
 
-        jTFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
 
-        jLNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jLNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLNickName.setText("Nickname:");
 
         jLPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLPassword.setText("PassWord:");
 
         jBRegistrarse.setBackground(new java.awt.Color(204, 204, 204));
-        jBRegistrarse.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBRegistrarse.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBRegistrarse.setActionCommand("jBRegistrarse");
         jBRegistrarse.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jBRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBRegistrarse.setLabel("Registrarse");
+        jBRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBRegistrarseActionPerformed(evt);
+            }
+        });
 
         jBEntrar.setBackground(new java.awt.Color(204, 204, 204));
-        jBEntrar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBEntrar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBEntrar.setActionCommand("jBEntrar");
         jBEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBEntrar.setLabel("Entrar");
+        jBEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,13 +94,10 @@ public class VentnaInicio extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLNickName)
                             .addComponent(jLPassword))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTFNickName, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFNickName, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(jLTitulo_iDomino, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -116,7 +121,7 @@ public class VentnaInicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPassword)
                     .addComponent(jTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBRegistrarse)
                     .addComponent(jBEntrar))
@@ -127,13 +132,28 @@ public class VentnaInicio extends javax.swing.JFrame {
         setBounds((screenSize.width-295)/2, (screenSize.height-266)/2, 295, 266);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarseActionPerformed
+        this.setVisible(false);
+       VentanaRegistro verVentana = new VentanaRegistro();
+       verVentana.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBRegistrarseActionPerformed
+
+    private void jBEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntrarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+       Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+       verVentana.setVisible(true);
+    }//GEN-LAST:event_jBEntrarActionPerformed
+
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentnaInicio().setVisible(true);
+                new VentanaInicio().setVisible(true);
             }
         });
     }

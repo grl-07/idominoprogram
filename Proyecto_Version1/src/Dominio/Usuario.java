@@ -1,5 +1,7 @@
 package Dominio;
 
+import java.util.Calendar;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +15,7 @@ public class Usuario {
     protected  String nombre;
     protected  String apellido;
     protected  String cedula;
-    protected  String fechaNaci; //fecha de nacimiento
+    Calendar  fechaNaci; //fecha de nacimiento
     protected  int score;
     protected  int Cont_ingreso;
     protected  int partidas_creadas;
@@ -21,7 +23,7 @@ public class Usuario {
 
 
     //CONSTRUCTOR DE LA CLASS USUARIO
-    public Usuario (String nombre,String apellido, String cedula, String fecha_nac, int score, int cont_ingreso, int partidas_creadas, int partidas_ganadas)
+    public Usuario (String nombre,String apellido, String cedula, Calendar fecha_nac, int score, int cont_ingreso, int partidas_creadas, int partidas_ganadas)
     {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -43,7 +45,7 @@ public class Usuario {
         return cedula;
     }
 
-    public String getFecha_nac() {
+    public Calendar getFecha_nac() {
         return fechaNaci;
     }
 
@@ -64,7 +66,7 @@ public class Usuario {
         this.cedula = cedula;
     }
 
-    public void setFecha_nac(String fecha_nac) {
+    public void setFecha_nac(Calendar fecha_nac) {
         this.fechaNaci = fecha_nac;
     }
 
