@@ -33,6 +33,7 @@ public class Usuario {
         this.Cont_ingreso= cont_ingreso;
         this.partidas_creadas= partidas_creadas;
         this.partidas_ganadas= partidas_ganadas;
+        //System.out.println(this.partidas_ganadas);
     }
 
 

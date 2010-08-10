@@ -13,13 +13,13 @@ import ve.edu.ucab.cliente.ClienteSocket;
  */
 public class ClienteTest
 {
-    public static void main(String[] args)
+   /* public static void main(String[] args)
     {
         ClienteSocket cliente = new ClienteSocket();
         String resultado = cliente.ejecutarPeticion("1:gerardo", "localhost",
         7687);
         System.out.println(resultado);
-    }
+    }*/
 }
 
 

@@ -82,7 +82,10 @@ public class Jugador extends Usuario
                 cadena = "El nombre es: " + nombre + "\n" +
                 "El apellido es: " + apellido + "\n" +
                 "La cedula es: " + cedula + "\n"+
+
+               //"F Nacimiento "+ fecha_nac+ "\n"+
                 "F Nacimiento "+ fechaNaci+ "\n"+
+
                 "Escore: "+ score+ "\n"+
                 "cont_ingreso: "+ Cont_ingreso+ "\n"+
                 "Partidas creadas "+partidas_creadas+"\n" +
