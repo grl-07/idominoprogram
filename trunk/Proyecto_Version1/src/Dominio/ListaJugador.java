@@ -46,15 +46,24 @@ public class ListaJugador {
         for(i=0 ; i<arreglo.length ; i++)
         {
             registro = (Jugador) arreglo[i];
+
             System.out.println("Nombre: " + registro.getNombre());
             System.out.println("Apellido: " + registro.getApellido());
             System.out.println("C.I: " + registro.getCedula());
+            System.out.println("Fecha Nacimiento: " + registro.getFecha_nac());
+            System.out.println("Score: " + registro.getScore());
+            System.out.println("Nro de Igresos: " + registro.getCont_ingreso());
+            System.out.println("Nro Partidas Creadas: " + registro.getPartidas_creadas());
+            System.out.println("Nro Partidas Ganadas: " + registro.getPartidas_ganadas());
             System.out.println("NickName: " + registro.getNickname());
+            System.out.println("NickName: " + registro.getPassword());
             System.out.println();
         }
 
         System.out.println("\n\n");
     }
+
+
 
     public void imprimirlistaOrdenada()
     {

@@ -18,8 +18,8 @@ public class Main {
 
         Jugador elJugador;
                 
-      elJugador = new Jugador("nanhh","jj","df","kj",3,3,1,1,"hjk","ew","dsd");
-      System.out.println(elJugador);
+      //elJugador = new Jugador("nanhh","jj","df","kj",3,3,1,1,"hjk","ew","dsd");
+      //System.out.println(elJugador);
 
       Lista_Pieza miListaPieza = new Lista_Pieza();
       miListaPieza.Shuffle();

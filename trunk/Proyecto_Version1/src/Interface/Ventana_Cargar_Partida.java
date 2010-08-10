@@ -4,7 +4,7 @@
  */
 
 /*
- * Cargar_Partida.java
+ * Ventana_Cargar_Partida.java
  *
  * Created on 09-ago-2010, 9:51:07
  */
@@ -15,10 +15,10 @@ package Interface;
  *
  * @author Blacky G
  */
-public class Cargar_Partida extends javax.swing.JFrame {
+public class Ventana_Cargar_Partida extends javax.swing.JFrame {
 
-    /** Creates new form Cargar_Partida */
-    public Cargar_Partida() {
+    /** Creates new form Ventana_Cargar_Partida */
+    public Ventana_Cargar_Partida() {
         initComponents();
     }
 
@@ -49,7 +49,7 @@ public class Cargar_Partida extends javax.swing.JFrame {
         jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jBCargar.setText("jButton1");
-        jBCargar.setBounds(193, 390, 110, 23);
+        jBCargar.setBounds(193, 390, 110, -1);
         jLayeredPane1.add(jBCargar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,7 +79,7 @@ public class Cargar_Partida extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cargar_Partida().setVisible(true);
+                new Ventana_Cargar_Partida().setVisible(true);
             }
         });
     }
