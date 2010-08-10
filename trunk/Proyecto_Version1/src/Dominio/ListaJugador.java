@@ -17,6 +17,12 @@ public class ListaJugador {
     {
         ElJugador = new ArrayList();
     }
+
+    public Object []  Devolver_lista_completa(){
+        Object [] arreglo;
+        arreglo=ElJugador.toArray();
+        return arreglo;
+    }
     /**
      * Método iprimirListaJugador: Este método imprime el contenido de la
      * lista Jugador
@@ -134,6 +140,22 @@ public class ListaJugador {
         }
         return null;
 }
+
+    public Jugador buscar_mayor (){
+        int i = 0;
+        Object[] a = ElJugador.toArray();
+        Jugador buscado = null;
+        Jugador alto = null;
+        while (i < a.length)
+        {
+            buscado = (Jugador) a[i];
+            if ((alto == null)||(alto.getScore() < buscado.getScore()))
+                alto = buscado;
+            i++;
+        }
+        return alto;
+
+    }
 
 
     /**
