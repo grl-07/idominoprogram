@@ -11,6 +11,7 @@
 
 package Interface;
 
+import Interface.Ventana_Crear_Cargar_Partida;
 import Logica.Comunicacion;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -70,7 +71,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
         setTitle("Registro De Usuario");
         setName("VentanaRegistro"); // NOI18N
 
-        jLTituloRegistroUsuario.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLTituloRegistroUsuario.setFont(new java.awt.Font("Comic Sans MS", 0, 18));
         jLTituloRegistroUsuario.setText(" Registro Usuario");
 
         jLNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
@@ -94,32 +95,32 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jLAvatar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLAvatar.setText("Avatar:");
 
-        jTFNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
             }
         });
 
-        jTFApellido.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFApellido.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
 
-        jTFCedula.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFCedula.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFCedulaActionPerformed(evt);
             }
         });
 
-        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
 
-        jTPFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTPFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jTPFPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTPFPasswordActionPerformed(evt);
             }
         });
 
-        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +128,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBAtras.setText("<< Atras");
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +212,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
                         .addGap(237, 237, 237))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(171, 171, 171)
-                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                 .addGap(165, 165, 165))
         );
         layout.setVerticalGroup(
@@ -336,7 +337,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
             verVentana.setVisible(true);
             //String fecha= String.format(DD, MM,AA);
-            Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci.getDateFormatString(), jTFNickName, jTPFPassword, jLAvatar);
+            //Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci.getDateFormatString(), jTFNickName, jTPFPassword, jLAvatar);
             System.out.println(jDCFechaNaci.getDateFormatString()); // .getDate().toString());
 
         

@@ -20,7 +20,7 @@ public class Jugador extends Usuario
    // private ListaPartida mis_partidas;
 
     //constructor clase jugador
-    public Jugador(String nombre, String apellido, String cedula, Calendar fecha_nac, int score, int cont_ingreso,
+    public Jugador(String nombre, String apellido, String cedula, /*Calendar*/ String fecha_nac, int score, int cont_ingreso,
     int partidas_creadas, int partidas_ganadas, String nickname, String password, String avatar)
     {
 
@@ -84,7 +84,7 @@ public class Jugador extends Usuario
                 "La cedula es: " + cedula + "\n"+
 
                //"F Nacimiento "+ fecha_nac+ "\n"+
-                "F Nacimiento "+ fechaNaci+ "\n"+
+                "F Nacimiento "+ "fechaNaci "+ "\n"+
 
                 "Escore: "+ score+ "\n"+
                 "cont_ingreso: "+ Cont_ingreso+ "\n"+

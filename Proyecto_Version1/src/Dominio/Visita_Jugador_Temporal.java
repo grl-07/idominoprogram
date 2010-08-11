@@ -11,6 +11,7 @@ public class Visita_Jugador_Temporal {
     private int id;
     private String nombre;
 
+
     public Visita_Jugador_Temporal(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;

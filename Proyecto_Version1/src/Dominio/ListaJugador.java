@@ -132,8 +132,8 @@ public class ListaJugador {
         while (i < a.length)
         {
             buscado = (Jugador) a[i];
-            String nom = buscado.getNombre();
-            String nick = buscado.getNickname();
+            String nom = buscado.getNickname();
+            String nick = buscado.getPassword();
             if ((nom.equals(nombre) == true) && (nick.equals(nickName) == true))
                return buscado;
             i++;

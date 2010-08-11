@@ -156,6 +156,26 @@ public class Lista_Pieza {
 
     }
 
+    public int dimension()
+    {
+        return miListaPieza.size();
+    }
+
+    public Pieza obtenerPiezaindice(int indice)
+    {
+        Pieza pieza = null;
+        Iterator iterador = miListaPieza.iterator();
+        int cont = 0;
+        while (iterador.hasNext())
+        {
+            pieza = (Pieza) iterador.next();
+            if (cont == indice)
+                break;
+            cont++;
+        }
+        return pieza;
+    }
+
 
 
 

@@ -21,6 +21,7 @@ public class Comunicacion {
   ListaJugador Registro_Jugadores = new ListaJugador();
   static ListaJugador listaDeJugador = new ListaJugador();
   Jugador Sesion_Jugador;
+  static int numPartida = 1;
   
  public static void obtenerDatos(JTextField nombre, JTextField apellido, JTextField cedula, JDateChooser fechaNaci, JTextField nickname, JPasswordField password, JLabel avatar)
     {
@@ -34,13 +35,60 @@ public class Comunicacion {
             String ci = cedula.getText();
             Calendar fn = fechaNaci.getCalendar();
             String nick = nickname.getText();
-            registro = new Jugador (name, last, ci, fn, 0, 0, 0, 0, nick, "password", "avatar");
+            registro = new Jugador (name, last, ci, "fn", 0, 0, 0, 0, nick, "clave", "avatar");
             listaDeJugador.agregarElemento(registro);
             listaDeJugador.imprimirListaJugador();
             System.out.println("Si estoy Guardando");
             
     }
-  // Sesion_Jugador = Registro_Jugadores.buscar_jugador(null, null);
+
+    public static ListaJugador getListaDeJugador() {
+        return listaDeJugador;
+    }
+
+    
+
+   public static void setLista(ListaJugador nueva)
+   {
+       //Calendar fn = Calendar.getInstance();
+       //Jugador registro = new Jugador ("nombre", "apellido", "cedula", "fn", 0, 0, 0, 0, "nick", "clave", "avatar");
+       listaDeJugador = nueva;
+   }
+
+   public static void imprimirLista()
+   {
+       listaDeJugador.imprimirListaJugador();
+   }
+
+   public static ListaJugador getLista()
+   {
+       return listaDeJugador;
+   }
+
+   public static String nuevaPartida(String nick, String inicio)
+   {
+       Calendar begin = Calendar.getInstance();
+       /*String[] fecha = inicio.split("/");
+       int dia = Integer.parseInt(fecha[0]);
+       int mes = Integer.parseInt(fecha[1]);
+       int ano = Integer.parseInt(fecha[2]);
+       begin.set
+       System.out.println(ano);*/
+       
+       Partida nueva = new Partida(nick, numPartida);
+       numPartida++;
+       Lista_Pieza repartio = nueva.repartirPieza();
+
+       Lista_Pieza pc = nueva.obtenerPiezasRestantes(1);
+       Lista_Pieza pote = nueva.obtenerPiezasRestantes(0);
+       pc.imprimirColeccion();
+       pote.imprimirColeccion();
+       return nueva.listaDePiezas();
+   }
+
+
+
+   // Sesion_Jugador = Registro_Jugadores.buscar_jugador(null, null);
 
 
 
