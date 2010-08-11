@@ -20,11 +20,11 @@ public class Jugador extends Usuario
    // private ListaPartida mis_partidas;
 
     //constructor clase jugador
-    public Jugador(String nombre, String apellido, String cedula, /*Calendar*/ String fecha_nac, int score, int cont_ingreso,
+    public Jugador(String nombre, String apellido,/*Calendar*/ String fecha_nac, int score, int cont_ingreso,
     int partidas_creadas, int partidas_ganadas, String nickname, String password, String avatar)
     {
 
-        super(nombre,apellido,cedula,fecha_nac,score,cont_ingreso,partidas_creadas,partidas_ganadas);
+        super(nombre,apellido,fecha_nac,score,cont_ingreso,partidas_creadas,partidas_ganadas);
         this.nickname = nickname;
         this.password = password;
         this.avatar = avatar;
@@ -81,8 +81,6 @@ public class Jugador extends Usuario
 
                 cadena = "El nombre es: " + nombre + "\n" +
                 "El apellido es: " + apellido + "\n" +
-                "La cedula es: " + cedula + "\n"+
-
                //"F Nacimiento "+ fecha_nac+ "\n"+
                 "F Nacimiento "+ "fechaNaci "+ "\n"+
 

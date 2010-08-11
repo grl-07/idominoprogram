@@ -18,7 +18,7 @@ public class Lista_Grande {
     {
         ListaJugador x = new ListaJugador();
 
-        Jugador Gamer = new Jugador ("GARRY","BRUNO","CEDULA", "fecha" ,2,2,3,3,"NICK_ELMIO","MICLAVE","AVATAAR");
+        Jugador Gamer = new Jugador ("GARRY","BRUNO","fecha" ,2,2,3,3,"NICK_ELMIO","MICLAVE","AVATAAR");
 
         x.agregarElemento(Gamer);
         return x;
