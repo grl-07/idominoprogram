@@ -12,6 +12,9 @@
 package Interface;
 
 import Logica.Comunicacion;
+import java.util.Arrays;
+import java.util.Calendar;
+import javax.swing.*;
 
 /**
  *
@@ -41,35 +44,33 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jLFechaNaci = new javax.swing.JLabel();
         jLNickName = new javax.swing.JLabel();
         jLPassword = new javax.swing.JLabel();
-        jLConfirmaPassword = new javax.swing.JLabel();
         jLAvatar = new javax.swing.JLabel();
         jTFNombre = new javax.swing.JTextField();
         jTFApellido = new javax.swing.JTextField();
         jTFCedula = new javax.swing.JTextField();
         jTFNickName = new javax.swing.JTextField();
-        jTPFConfirmaPassword = new javax.swing.JPasswordField();
         jTPFPassword = new javax.swing.JPasswordField();
         jBGuardar = new javax.swing.JButton();
         jBAtras = new javax.swing.JButton();
-        jLImagenFumador = new javax.swing.JLabel();
-        jLImageHomero = new javax.swing.JLabel();
-        jLImagenMujer = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jLImagenRubia = new javax.swing.JLabel();
-        jLImagenSherk = new javax.swing.JLabel();
-        jLImagenStewie = new javax.swing.JLabel();
         jRadioButton7 = new javax.swing.JRadioButton();
         jRadioButton8 = new javax.swing.JRadioButton();
         jRadioButton9 = new javax.swing.JRadioButton();
         jDCFechaNaci = new com.toedter.calendar.JDateChooser();
+        jL = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro De Usuario");
         setName("VentanaRegistro"); // NOI18N
 
-        jLTituloRegistroUsuario.setFont(new java.awt.Font("Comic Sans MS", 0, 18));
+        jLTituloRegistroUsuario.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLTituloRegistroUsuario.setText(" Registro Usuario");
 
         jLNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
@@ -90,40 +91,35 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jLPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLPassword.setText("Password:");
 
-        jLConfirmaPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
-        jLConfirmaPassword.setText("Confirmar Pasword:");
-
         jLAvatar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLAvatar.setText("Avatar:");
 
-        jTFNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jTFNombre.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
             }
         });
 
-        jTFApellido.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jTFApellido.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
 
-        jTFCedula.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
-
-        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
-
-        jTPFConfirmaPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
-        jTPFConfirmaPassword.addActionListener(new java.awt.event.ActionListener() {
+        jTFCedula.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTPFConfirmaPasswordActionPerformed(evt);
+                jTFCedulaActionPerformed(evt);
             }
         });
 
-        jTPFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+
+        jTPFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTPFPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTPFPasswordActionPerformed(evt);
             }
         });
 
-        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +127,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBAtras.setText("<< Atras");
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,19 +135,20 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jLImagenFumador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorFumon.JPEG.jpg"))); // NOI18N
-
-        jLImageHomero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorHomero.JPEG.jpg"))); // NOI18N
-
-        jLImagenMujer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorPlayera.JPEG.jpg"))); // NOI18N
-
-        jLImagenRubia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorRubia.jpg.jpg"))); // NOI18N
-
-        jLImagenSherk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorShrek.jpg.jpg"))); // NOI18N
-
-        jLImagenStewie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorStewie.jpg.jpg"))); // NOI18N
-
         jDCFechaNaci.setName("jDCFechaNaci"); // NOI18N
+
+        jL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorHomero.jpg"))); // NOI18N
+        jL.setText("jLabel1");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorPlayera.jpg"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorFumon.jpg"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorStewie.jpg"))); // NOI18N
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorRubia.jpg"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/JugadorShrek.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,88 +159,82 @@ public class VentanaRegistro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLNombre)
-                            .addComponent(jLApellido)
-                            .addComponent(jLCedula)
-                            .addComponent(jLFechaNaci)
-                            .addComponent(jLNickName)
-                            .addComponent(jLPassword))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLApellido, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLCedula, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLFechaNaci, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLNickName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLAvatar, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jDCFechaNaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jTFNickName, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addComponent(jTFApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addComponent(jTFCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addComponent(jTPFPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(9, 9, 9)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLImagenStewie)
-                                        .addComponent(jLImageHomero, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jRadioButton9)
-                                        .addComponent(jRadioButton1)
-                                        .addComponent(jBAtras))
-                                    .addGap(27, 27, 27)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jL, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(jRadioButton9)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jRadioButton3)
-                                            .addComponent(jLImagenMujer))
+                                            .addComponent(jLabel4)
+                                            .addComponent(jRadioButton8))
+                                        .addGap(28, 28, 28)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jRadioButton2)
+                                        .addComponent(jLabel2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jRadioButton8)
-                                            .addComponent(jLImagenRubia, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLAvatar)
-                            .addComponent(jLConfirmaPassword))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTPFConfirmaPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLImagenSherk)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jRadioButton2)
-                                .addComponent(jLImagenFumador))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jRadioButton7)))
-                .addGap(57, 57, 57))
+                                            .addComponent(jLabel5)
+                                            .addComponent(jBGuardar)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addComponent(jRadioButton7))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTPFPassword)
+                                .addComponent(jTFNickName)
+                                .addComponent(jTFCedula)
+                                .addComponent(jTFApellido)
+                                .addComponent(jTFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                .addComponent(jDCFechaNaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(114, 114, 114))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jBAtras)
+                        .addGap(237, 237, 237))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(171, 171, 171)
+                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                .addGap(165, 165, 165))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLNombre)
-                            .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLApellido)
-                            .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLCedula)
-                            .addComponent(jTFCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLNombre)
+                    .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLApellido)
+                    .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLCedula)
+                    .addComponent(jTFCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jDCFechaNaci, 0, 0, Short.MAX_VALUE)
-                    .addComponent(jLFechaNaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLFechaNaci))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLNickName)
@@ -252,58 +243,49 @@ public class VentanaRegistro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPassword)
                     .addComponent(jTPFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLAvatar, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jL)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(12, 12, 12)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton1))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton9)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton7))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLConfirmaPassword)
-                    .addComponent(jTPFConfirmaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLAvatar)
-                            .addComponent(jLImageHomero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton1)))
-                    .addComponent(jLImagenMujer)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLImagenFumador, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLImagenStewie, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLImagenSherk)
-                        .addComponent(jLImagenRubia)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton9)
-                            .addComponent(jRadioButton8))
-                        .addGap(96, 96, 96))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBAtras)
-                            .addComponent(jBGuardar))
-                        .addContainerGap())))
+                    .addComponent(jBAtras)
+                    .addComponent(jBGuardar))
+                .addContainerGap())
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-469)/2, (screenSize.height-675)/2, 469, 675);
+        setBounds((screenSize.width-480)/2, (screenSize.height-695)/2, 480, 695);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFNombreActionPerformed
-
-    private void jTPFConfirmaPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPFConfirmaPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTPFConfirmaPasswordActionPerformed
 
     private void jTPFPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPFPasswordActionPerformed
         // TODO add your handling code here:
@@ -311,11 +293,77 @@ public class VentanaRegistro extends javax.swing.JFrame {
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
-       this.setVisible(false);
-       Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
-       verVentana.setVisible(true);
-       Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci, jTFNickName, jTPFPassword, jLAvatar);
-       System.out.println(jDCFechaNaci.getDate().toString());
+        String nombre, apellido, cedula, nick ;
+        cedula= "";
+        int control;
+
+    if ((jTFNombre.getText().equals("")) || (jTFApellido.getText().equals("")) || (jTFCedula.getText().equals("")) 
+                || (jTFNickName.getText().equals("")) || (jTPFPassword.getPassword().toString().equals("")))
+        JOptionPane.showMessageDialog(this, "DEBE LLENAR TODOS LOS CAMPOS ");
+    else
+    {
+     try
+     {
+         if (jTFNombre.getText().equals(""))
+            JOptionPane.showMessageDialog(this, "DEBE INGRESAR UN NOMBRE");
+
+         if (jTFApellido.getText().equals(""))
+            JOptionPane.showMessageDialog(this, "DEBE INGRESAR UN APELLIDO");
+      
+      if (jTFCedula.getText().equals(""))
+            JOptionPane.showMessageDialog(this, "DEBE INGRESAR UN NUMERO DE CEDULA");
+
+
+         try // Se valida el Campo Cedula si no son Numeros se limpia el campo y se solicita ingresar un dato valido
+        {
+        control = Integer.parseInt(cedula);
+        }
+        catch (NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(this, "EL CAMPO CEDULA SOLO ACEPTA CARACTERES NUMERICOS");
+            jTFCedula.setText("");
+        }
+        
+        if (jTFNickName.getText().equals(""))
+            JOptionPane.showMessageDialog(this, "DEBE INGRESAR UN NICKNAME PARA PODER JUGAR");
+        
+        if (jTPFPassword.getPassword().toString().equals(""));
+            JOptionPane.showMessageDialog(this, "DEBE INGRESAR UNA CLAVE PARA PODER INGRESAR LUEGO A LA APLICACION"); 
+     }
+      catch(Exception e)
+      {
+      this.setVisible(false);
+            Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+            verVentana.setVisible(true);
+            //String fecha= String.format(DD, MM,AA);
+            Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci.getDateFormatString(), jTFNickName, jTPFPassword, jLAvatar);
+            System.out.println(jDCFechaNaci.getDateFormatString()); // .getDate().toString());
+
+        
+      }
+
+
+    }
+        /*
+        if ( (jTPFPassword.getPassword() == jTPFConfirmaPassword.getPassword()))  // true
+        {
+            this.setVisible(false);
+            Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+            verVentana.setVisible(true);
+            //String fecha= String.format(DD, MM,AA);
+            Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci.getDateFormatString(), jTFNickName, jTPFPassword, jLAvatar);
+            System.out.println(jDCFechaNaci.getDate().toString());
+        }
+       else
+        {
+            jTPFPassword.setText("");
+            jTPFConfirmaPassword.setText("");
+            this.setVisible(false);
+            VentanaMensajePassword verVentana = new VentanaMensajePassword();
+            verVentana.setVisible(true);
+        }*/
+
+       
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jBAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAtrasActionPerformed
@@ -325,6 +373,11 @@ public class VentanaRegistro extends javax.swing.JFrame {
        verVentana.setVisible(true);
 
     }//GEN-LAST:event_jBAtrasActionPerformed
+
+    private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTFCedulaActionPerformed
 
     /**
     * @param args the command line arguments
@@ -342,21 +395,20 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private javax.swing.JButton jBAtras;
     private javax.swing.JButton jBGuardar;
     private com.toedter.calendar.JDateChooser jDCFechaNaci;
+    private javax.swing.JLabel jL;
     private javax.swing.JLabel jLApellido;
     private javax.swing.JLabel jLAvatar;
     private javax.swing.JLabel jLCedula;
-    private javax.swing.JLabel jLConfirmaPassword;
     private javax.swing.JLabel jLFechaNaci;
-    private javax.swing.JLabel jLImageHomero;
-    private javax.swing.JLabel jLImagenFumador;
-    private javax.swing.JLabel jLImagenMujer;
-    private javax.swing.JLabel jLImagenRubia;
-    private javax.swing.JLabel jLImagenSherk;
-    private javax.swing.JLabel jLImagenStewie;
     private javax.swing.JLabel jLNickName;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLPassword;
     private javax.swing.JLabel jLTituloRegistroUsuario;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -367,7 +419,6 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private javax.swing.JTextField jTFCedula;
     private javax.swing.JTextField jTFNickName;
     private javax.swing.JTextField jTFNombre;
-    private javax.swing.JPasswordField jTPFConfirmaPassword;
     private javax.swing.JPasswordField jTPFPassword;
     // End of variables declaration//GEN-END:variables
 
