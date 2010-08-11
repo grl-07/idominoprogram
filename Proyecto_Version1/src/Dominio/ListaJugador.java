@@ -27,6 +27,13 @@ public class ListaJugador {
      * Método iprimirListaJugador: Este método imprime el contenido de la
      * lista Jugador
      */
+
+        public Iterator getIterator()
+    {
+        return ElJugador.iterator();
+    }
+
+
     public void imprimirListaJugador()
     {
         int i;
