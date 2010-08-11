@@ -5,6 +5,7 @@
 
 package Dominio;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
  */
 public class Partida {
     private int id_partida;
+    private String creador;
     private Calendar fecha_inicio;
     private Calendar fecha_actual;
     private Lista_Pieza jugador1;
@@ -20,7 +22,7 @@ public class Partida {
     private Lista_Pieza pote;
 
 
-    public Partida(int id_partida/*, Calendar fecha_inicio, Calendar fecha_actual*/)
+    public Partida(String creador, int id_partida/*, Calendar fecha_inicio, Calendar fecha_actual*/)
     {
         this.id_partida = id_partida;
         this.fecha_inicio = fecha_inicio;
@@ -28,6 +30,7 @@ public class Partida {
         jugador1 = new Lista_Pieza();
         jugador2 = new Lista_Pieza();
         pote = new Lista_Pieza();
+        this.creador = creador;
     }
 
     public Calendar getFecha_actual() {
@@ -54,7 +57,7 @@ public class Partida {
         this.id_partida = id_partida;
     }
 
-    public boolean repartirPieza()
+    public Lista_Pieza repartirPieza()
     {
         int i=0;
         Lista_Pieza Piezas = new Lista_Pieza();
@@ -79,15 +82,38 @@ public class Partida {
                 //<>
         }
         pote = Piezas;
-        pote.imprimirColeccion();
+        /*pote.imprimirColeccion();
         System.out.println("jugador1");
         jugador1.imprimirColeccion();
         System.out.println("jugador2");
-        jugador2.imprimirColeccion();
+        jugador2.imprimirColeccion();*/
 
-        return (false);
+        return jugador1;
+    }
+    
+    public Lista_Pieza obtenerPiezasRestantes(int control)
+    {
+        if (control == 1)
+          return jugador2;
+        return pote;
+    }
 
 
+    public String listaDePiezas()
+    {
+        Pieza pieza = jugador1.obtenerPieza();
+        String lista = "";
+        int i = 0;
+        while (i < jugador1.dimension())
+        {
+            pieza = jugador1.obtenerPiezaindice(i);
+            if (lista == "")
+                lista = pieza.getPintaSuperior() + "-" + pieza.getPintainferior();
+            else
+                lista = lista + ":" + pieza.getPintaSuperior() + "-" + pieza.getPintainferior();
+            i++;
+        }
+        return lista;
     }
 
 

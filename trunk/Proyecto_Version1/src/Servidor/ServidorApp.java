@@ -5,6 +5,8 @@
 
 package Servidor;
 
+import Dominio.ListaJugador;
+import Logica.Comunicacion;
 import ve.edu.ucab.server.logica.Servidor;
 
 /**
@@ -15,7 +17,7 @@ public class ServidorApp {
 
     public static void main(String[] args)
     {
-    String[] parametros = {"7687", "logica.Gestion_juego"};
+    String[] parametros = {"7687", "Logica.Gestion_Juego"};
     Servidor.main(parametros);
 }
 

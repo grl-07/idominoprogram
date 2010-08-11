@@ -1,5 +1,6 @@
-package logica;
+package Logica;
 import Dominio.*;
+import java.util.Calendar;
 import ve.edu.ucab.server.logica.LogicaServidor;
 
 
@@ -7,20 +8,54 @@ public class Gestion_Juego implements LogicaServidor
 {
         public String realizarOperacion(String cadena)
         {
-            String[] pedazo_de_cadena = cadena.split(":");
-            Visita_Jugador_Temporal j_visita = new Visita_Jugador_Temporal(0,"");
-
-            // pasa el primer digito de la cadena recibida a un numero
-            j_visita.setId(Integer.parseInt(pedazo_de_cadena[0]));
-            // pasa la segunda parte que es el nombre;
-            j_visita.setNombre(pedazo_de_cadena[1]);
-        return realizarReserva(j_visita);
+//            Comunicacion.setLista();
+            String[] datos = cadena.split(":");
+            String pedido = datos[0];
+            int opcion = Integer.parseInt(pedido);
+            if (opcion == 1){
+                //System.out.println("entro al opcion");
+                return ingresoSistema(datos);}  //Hacer un Case
+            if (opcion == 2){
+                //System.out.println("entro al opcion");
+                return crearPartida(datos);}
+            return "False";
         }
 
-        public String realizarReserva(Visita_Jugador_Temporal j_visita)
+        Jugador elJugador, elJugador1;
+                
+        Calendar fecha;
+
+        public String ingresoSistema(String[] datos)
         {
-            String resultado = "TRUE";
-            System.out.println("La reserva " + j_visita.getNombre() + " se ha efectuado");
-        return resultado;
+            String nombre = datos[1];
+            String clave = datos[2];
+            //ListaJugador control = Comunicacion.getLista();
+           // elJugador = new Jugador("nombre","apellido","cedula", fecha ,/*score*/3,/*ingreso*/2,/*creadas*/1,/*ganadas*/10,"stewie","1234","avatar");
+            
+
+           //ListaJugador control = Lista_Grande.Devolverlista();
+            //control.agregarElemento(elJugador);
+
+            //if (control != null)
+            //{
+               Jugador ingreso = Comunicacion.getListaDeJugador().buscar_jugador(nombre, clave);
+               
+               if (ingreso != null)
+               {
+                   System.out.println("entro en el ingreso");
+                   return "TRUE:"+ ingreso.getNombre() + ":" + ingreso.getApellido()+ ":" + ingreso.getAvatar();
+               }
+           //}
+
+           return "FALSE";
         }
+        
+        public String crearPartida(String[] datos)
+        {
+            String nick = datos[1];
+            String fecha = datos[2];
+            return Comunicacion.nuevaPartida(nick, fecha); //Falta hacer fecha
+        }
+
+
 }
