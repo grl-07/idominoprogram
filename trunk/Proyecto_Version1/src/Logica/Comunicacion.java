@@ -23,7 +23,7 @@ public class Comunicacion {
   Jugador Sesion_Jugador;
   static int numPartida = 1;
   
- public static void obtenerDatos(JTextField nombre, JTextField apellido, JTextField cedula, JDateChooser fechaNaci, JTextField nickname, JPasswordField password, JLabel avatar)
+ public static void obtenerDatos(JTextField nombre, JTextField apellido,JDateChooser fechaNaci, JTextField nickname, JPasswordField password, JLabel avatar)
     {
 
      Jugador registro = null;
@@ -32,15 +32,25 @@ public class Comunicacion {
 
             String name = nombre.getText();
             String last = apellido.getText();
-            String ci = cedula.getText();
             Calendar fn = fechaNaci.getCalendar();
             String nick = nickname.getText();
-            registro = new Jugador (name, last, ci, "fn", 0, 0, 0, 0, nick, "clave", "avatar");
+            registro = new Jugador (name, last,"fn", 0, 0, 0, 0, nick, "clave", "avatar");
             listaDeJugador.agregarElemento(registro);
             listaDeJugador.imprimirListaJugador();
             System.out.println("Si estoy Guardando");
             
     }
+
+
+        public String crearUsuario(String nickname, String clave, String nombre, String apellido, String fecha, String avatar)
+        {
+            Calendar fn = Calendar.getInstance(); //Pasar string a fecha
+            Jugador registro = new Jugador(nombre, apellido,fecha, 0, 0, 0, 0, nickname,clave,avatar); ;
+            listaDeJugador.agregarElemento(registro);
+
+          return "false";
+        }
+
 
     public static ListaJugador getListaDeJugador() {
         return listaDeJugador;

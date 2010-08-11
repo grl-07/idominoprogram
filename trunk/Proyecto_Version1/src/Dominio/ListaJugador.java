@@ -55,7 +55,6 @@ public class ListaJugador {
 
             System.out.println("Nombre: " + registro.getNombre());
             System.out.println("Apellido: " + registro.getApellido());
-            System.out.println("C.I: " + registro.getCedula());
             System.out.println("Fecha Nacimiento: " + registro.getFecha_nac());
             System.out.println("Score: " + registro.getScore());
             System.out.println("Nro de Igresos: " + registro.getCont_ingreso());

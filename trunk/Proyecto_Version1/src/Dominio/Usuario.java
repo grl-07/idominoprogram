@@ -14,9 +14,8 @@ import java.util.Calendar;
 public class Usuario {
     protected  String nombre;
     protected  String apellido;
-    protected  String cedula;
     //protected  Calendar  fechaNaci; //fecha de nacimiento
-   protected String fecha_nac;
+    protected String fecha_nac;
     protected  int score;
     protected  int Cont_ingreso;
     protected  int partidas_creadas;
@@ -24,11 +23,10 @@ public class Usuario {
 
 
     //CONSTRUCTOR DE LA CLASS USUARIO
-    public Usuario (String nombre,String apellido, String cedula, /*alendar*/String fecha_nac, int score, int cont_ingreso, int partidas_creadas, int partidas_ganadas)
+    public Usuario (String nombre,String apellido, /*calendar*/String fecha_nac, int score, int cont_ingreso, int partidas_creadas, int partidas_ganadas)
     {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.cedula = cedula;
         //this.fechaNaci= fecha_nac;
         this.fecha_nac = fecha_nac;
         this.score= score;
@@ -44,9 +42,6 @@ public class Usuario {
         return apellido;
     }
 
-    public String getCedula() {
-        return cedula;
-    }
 
     public /*Calendar*/ String getFecha_nac() {
         //return fechaNaci;
@@ -66,9 +61,6 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
 
     public void setFecha_nac(/*Calendar fecha_nac*/ String fecha_nac) {
         //this.fechaNaci = fecha_nac;

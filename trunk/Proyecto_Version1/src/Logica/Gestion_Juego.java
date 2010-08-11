@@ -8,22 +8,46 @@ public class Gestion_Juego implements LogicaServidor
 {
         public String realizarOperacion(String cadena)
         {
-//            Comunicacion.setLista();
             String[] datos = cadena.split(":");
             String pedido = datos[0];
             int opcion = Integer.parseInt(pedido);
-            if (opcion == 1){
+            if (opcion == 1)
                 //System.out.println("entro al opcion");
-                return ingresoSistema(datos);}  //Hacer un Case
-            if (opcion == 2){
+                return ingresoSistema(datos);  //Hacer un Case
+            if (opcion == 2)
                 //System.out.println("entro al opcion");
-                return crearPartida(datos);}
-            return "False";
+                return crearPartida(datos);
+            if (opcion == 3)
+                return registroUsuario(datos);
+            /*if (opcion == 4)
+                //return guardarPartida(datos);
+            if (opcion == 5)
+                //return enviarJugada(datos);
+            if (opcion == 6)
+                //return finPartida(datos);
+            if (opcion == 7)*/
+                //return agarrarDelPote(datos);
+         return "FALSE";
         }
 
         Jugador elJugador, elJugador1;
                 
         Calendar fecha;
+
+
+
+        public String registroUsuario(String[] datos)
+        {
+            String nickname = datos[1];
+            String clave = datos[2];
+            String nombre = datos[3];
+            String apellido = datos[4];
+            String fechaNac = datos[5];
+            String iDavatar = datos[6];
+
+
+               return "hola";
+        }
 
         public String ingresoSistema(String[] datos)
         {
