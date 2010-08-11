@@ -11,6 +11,8 @@
 
 package Interface;
 
+import javax.swing.*;
+
 /**
  *
  * @author Robert
@@ -33,11 +35,11 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jLTitulo_iDomino = new javax.swing.JLabel();
         jTFNickName = new javax.swing.JTextField();
-        jTFPassword = new javax.swing.JTextField();
         jLNickName = new javax.swing.JLabel();
         jLPassword = new javax.swing.JLabel();
         jBRegistrarse = new javax.swing.JButton();
         jBEntrar = new javax.swing.JButton();
+        jPFPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO iDOMINO");
@@ -51,9 +53,7 @@ public class VentanaInicio extends javax.swing.JFrame {
         jLTitulo_iDomino.setFont(new java.awt.Font("Comic Sans MS", 2, 18));
         jLTitulo_iDomino.setText("   iDomino");
 
-        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
-
-        jTFPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jTFNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
 
         jLNickName.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLNickName.setText("Nickname:");
@@ -62,7 +62,7 @@ public class VentanaInicio extends javax.swing.JFrame {
         jLPassword.setText("PassWord:");
 
         jBRegistrarse.setBackground(new java.awt.Color(204, 204, 204));
-        jBRegistrarse.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBRegistrarse.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBRegistrarse.setActionCommand("jBRegistrarse");
         jBRegistrarse.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBRegistrarse.setLabel("Registrarse");
@@ -73,7 +73,7 @@ public class VentanaInicio extends javax.swing.JFrame {
         });
 
         jBEntrar.setBackground(new java.awt.Color(204, 204, 204));
-        jBEntrar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBEntrar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBEntrar.setActionCommand("jBEntrar");
         jBEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBEntrar.setLabel("Entrar");
@@ -95,9 +95,9 @@ public class VentanaInicio extends javax.swing.JFrame {
                             .addComponent(jLNickName)
                             .addComponent(jLPassword))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFNickName, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPFPassword, 0, 0, Short.MAX_VALUE)
+                            .addComponent(jTFNickName, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(jLTitulo_iDomino, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -120,12 +120,12 @@ public class VentanaInicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPassword)
-                    .addComponent(jTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                    .addComponent(jPFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBRegistrarse)
                     .addComponent(jBEntrar))
-                .addGap(29, 29, 29))
+                .addGap(32, 32, 32))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -141,10 +141,23 @@ public class VentanaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBRegistrarseActionPerformed
 
     private void jBEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntrarActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-       Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
-       verVentana.setVisible(true);
+// TODO add your handling code here:
+
+        if ((jTFNickName.getText().equals("")) || (jPFPassword.getPassword().equals("")))
+        {
+            JOptionPane.showMessageDialog(this, "DEBE LLENAR AMBOS CAMPOS PARA PODER INGRESAR A LA APLICACION");
+            this.dispose();
+            this.setVisible(true);       
+        }
+        else
+        {
+                this.dispose();
+                Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+                verVentana.setVisible(true);
+        }
+
+
+
     }//GEN-LAST:event_jBEntrarActionPerformed
 
     /**
@@ -164,8 +177,8 @@ public class VentanaInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLNickName;
     private javax.swing.JLabel jLPassword;
     private javax.swing.JLabel jLTitulo_iDomino;
+    private javax.swing.JPasswordField jPFPassword;
     private javax.swing.JTextField jTFNickName;
-    private javax.swing.JTextField jTFPassword;
     // End of variables declaration//GEN-END:variables
 
 }
