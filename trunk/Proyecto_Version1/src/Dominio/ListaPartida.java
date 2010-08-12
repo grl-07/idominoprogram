@@ -5,8 +5,7 @@
 
 package Dominio;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -30,6 +29,10 @@ public class ListaPartida {
         l_partidas.remove(laPartida);
     }
 
+    public Iterator getIterator()
+    {
+        return l_partidas.iterator();
+    }
 
 
 

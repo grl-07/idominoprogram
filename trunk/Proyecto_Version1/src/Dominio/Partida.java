@@ -33,6 +33,40 @@ public class Partida {
         this.creador = creador;
     }
 
+    public Lista_Pieza getJugador1() {
+        return jugador1;
+    }
+
+    public void setJugador1(Lista_Pieza jugador1) {
+        this.jugador1 = jugador1;
+    }
+
+    public Lista_Pieza getJugador2() {
+        return jugador2;
+    }
+
+    public void setJugador2(Lista_Pieza jugador2) {
+        this.jugador2 = jugador2;
+    }
+
+    public Lista_Pieza getPote() {
+        return pote;
+    }
+
+    public void setPote(Lista_Pieza pote) {
+        this.pote = pote;
+    }
+
+
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
+
+
     public Calendar getFecha_actual() {
         return fecha_actual;
     }
