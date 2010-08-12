@@ -131,6 +131,21 @@ public class ListaJugador {
      *a un usuario recibiendo el nombre y el NickName del mismo
      *si se encuentra en la lista retorna TRUE
     */
+    public Jugador buscar_jugador_nick (String nickName){
+        int i = 0;
+        Object[] a = ElJugador.toArray();
+        Jugador buscado = null;
+        while (i < a.length)
+        {
+            buscado = (Jugador) a[i];
+            String nom = buscado.getNickname();
+            if (nom.equals(nickName) == true)
+               return buscado;
+            i++;
+        }
+        return null;
+}
+
     public Jugador buscar_jugador (String nombre,String nickName){
         int i = 0;
         Object[] a = ElJugador.toArray();

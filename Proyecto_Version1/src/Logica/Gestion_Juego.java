@@ -44,9 +44,32 @@ public class Gestion_Juego implements LogicaServidor
             String apellido = datos[4];
             String fechaNac = datos[5];
             String iDavatar = datos[6];
+            Comunicacion.crearUsuario(nickname, clave, nombre, apellido, fechaNac, iDavatar);
+            System.out.println("IMPRIMIR EN REGISTRO: ");
+            Comunicacion.imprimirLista();
+
+            return "TRUE";
+        }
+
+        public String guardarPartida(String[] datos)
+        {
+            String nickname = datos[1];
+            String IDpartida = datos[2];
+
+            return "TRUE";
+        }
 
 
-               return "hola";
+        public String enviarJugada(String[] datos)
+        {
+            String nickname = datos[1];
+            String IDpartida = datos[2];
+            String ficha = datos[3];
+
+            //FALTA HACERRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!
+
+            return "TRUE";
+
         }
 
         public String ingresoSistema(String[] datos)
