@@ -45,9 +45,9 @@ public class Manejo_archivo
 
             /* Se obtienen todos los hijos cuya etiqueta esa "usuario"  */
             /* y se asignan esos hijos a un List                        */
-            List l_Jugadores = raiz.getChildren("Jugadores");
+            List l_Jugadores = raiz.getChildren("Jugador");
 
-            System.out.println("Formada por:" + l_Jugadores.size() + "Jugadores");
+            System.out.println("Formada por:" + l_Jugadores.size() + "  Jugadores");
             System.out.println("------------------");
 
             /* Se genera un iterador para recorrer el List que se generó */
@@ -59,7 +59,7 @@ public class Manejo_archivo
                 /* Se obtiene cada uno y se asigna a un objeto de tipo Element */
                 Element e = (Element) i.next();
 
-//--------------------------------------
+//-----------------------------------------------
                 /* Se obtiene el nombre, apellido y cargo de cada una de las etiquetas  */
                 /* hijas de usuario, es decir, nombre, apellido y cargo                 */
                 Element nombre = e.getChild("nombre");
@@ -72,16 +72,18 @@ public class Manejo_archivo
                 Element nick_name = e.getChild("nickname");
                 Element password = e.getChild("password");
                 Element avatar = e.getChild("avatar");
- //public Jugador(String nombre, String apellido,/*Calendar*/ String fecha_nac, int score, int cont_ingreso,
-   // int partidas_creadas, int partidas_ganadas, String nickname, String password, String avatar)
-    
-                /* Se crea un nodo nuevo con la información y se agrega a la lista de usuarios */
+ //------------------Sacando de lista partida y convirtiendola
+                
+
+
+//---------------------------------------------------------------
+       /* Se crea un nodo nuevo con la información y se agrega a la lista de jugadores            */
       Jugador Gamer = new Jugador( nombre.getText(),apellido.getText(),fecha_nac.getText(), Integer.parseInt(score.getText()),
             Integer.parseInt(cont_ingreso.getText()),Integer.parseInt(partidas_creadas.getText()),
             Integer.parseInt(partidas_ganadas.getText()),nick_name.getText(),password.getText(),avatar.getText()  );
                         
                 listaDeJugadores.agregarElemento(Gamer);
-            }
+            } // WHILE DE JUGADOR
         }
         catch (Exception e)
         {
@@ -97,6 +99,7 @@ public class Manejo_archivo
     public static void guardarArchivoXML(ListaJugador listaDeJugadores)
     {
         Jugador nodoAuxiliar;
+        Partida nodoAuxiliar_partida;
 
         /* Se crea una raiz de la estructura */
         Element root = new Element("Jugadores");
@@ -108,8 +111,8 @@ public class Manejo_archivo
 
         while (iterador.hasNext())
         {
-            /* Se crea la etiqueta "usuario" */
-            Element Jugadores = new Element("Jugadores");
+            /* Se crea la etiqueta "Jugadores" */
+            Element Jugadores = new Element("Jugador");
 
             nodoAuxiliar = (Jugador) iterador.next();
 
@@ -140,6 +143,51 @@ public class Manejo_archivo
             password.setText(nodoAuxiliar.getPassword());
             avatar.setText(nodoAuxiliar.getAvatar());
 
+   //---------------MANEJO LISTA PARTIDA----DENTRO DEL WHILE DEL JUGADOR-------
+    /*        Element Partidas = new Element("Lista_Partidas");
+
+            Iterator iterador_partidas = nodoAuxiliar.getMis_partidas().getIterator();
+
+            while (iterador_partidas.hasNext())
+        {
+            // Se crea la etiqueta "Partida"
+            Element Partida = new Element("Partida");
+
+            nodoAuxiliar_partida = (Partida) iterador.next();
+
+            //Se crean las etiquetas  dentro para introducir lista pieza
+
+                Element id_partida = new Element ("id_partida");
+                Element creador = new Element ("creador");
+                Element fecha_inicio = new Element("fecha_inicio");
+                Element fecha_actual = new Element("fecha_actual");
+                Element Piezas_jugador1 = new Element ("Piezas_jugador1");
+                Element Piezas_jugador2 = new Element ("Piezas_Jugador2");
+                Element Piezas_pote = new Element ("Piezas_pote");
+
+
+            //  Se agrega la informacion a las etiquetas creadas
+            id_partida.setText(String.valueOf(nodoAuxiliar_partida.getId_partida()) );
+            creador.setText(nodoAuxiliar_partida.getCreador());
+            //fecha_inicio.setText(nodoAuxiliar_partida.getFecha_inicio());
+            //fecha_actual.setText(nodoAuxiliar_partida.getFecha_actual() );
+            Piezas_jugador1.setText(nodoAuxiliar_partida.getJugador1().ObtenerPiezasCadena() );
+            Piezas_jugador2.setText(nodoAuxiliar_partida.getJugador2().ObtenerPiezasCadena() );
+            Piezas_pote.setText(nodoAuxiliar_partida.getPote().ObtenerPiezasCadena() );
+
+            //introduciendo en la sub etiqueta "partida" de lista partida
+            Partida.addContent(creador);
+            Partida.addContent(id_partida);
+            Partida.addContent(fecha_inicio);
+            Partida.addContent(fecha_actual);
+            Partida.addContent(Piezas_jugador1);
+            Partida.addContent(Piezas_jugador2);
+            Partida.addContent(Piezas_pote);
+
+
+            }// del while de partidas  */
+ //----------------------------------------------------------------------------
+
            
             /* Se añaden las etiquetas a la etiqueta principal (usuario)    */
             /* estableciendo que un usuario tiene nombre, apellido y cargo  */
@@ -153,10 +201,12 @@ public class Manejo_archivo
             Jugadores.addContent(nick_name);
             Jugadores.addContent(password);
             Jugadores.addContent(avatar);
+          //  Jugadores.addContent(Partidas);
+
 
             /* Se añade el nuevo usuario a la estructura XML */
             root.addContent(Jugadores);
-        }
+        } //del while jugadores
 
         /* Se crea un documento nuevo */
         Document doc = new Document(root);
@@ -183,6 +233,7 @@ public class Manejo_archivo
         catch(Exception e)
         {
             e.printStackTrace();
+
         }
     }
 }

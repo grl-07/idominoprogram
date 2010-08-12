@@ -17,19 +17,28 @@ public class Jugador extends Usuario
     private String nickname;
     private String password;
     private String avatar;
-   // private ListaPartida mis_partidas;
+    private ListaPartida mis_partidas;
 
     //constructor clase jugador
     public Jugador(String nombre, String apellido,/*Calendar*/ String fecha_nac, int score, int cont_ingreso,
-    int partidas_creadas, int partidas_ganadas, String nickname, String password, String avatar)
+    int partidas_creadas, int partidas_ganadas, String nickname, String password, String avatar  /*,ListaPartida partidas*/ )
     {
 
         super(nombre,apellido,fecha_nac,score,cont_ingreso,partidas_creadas,partidas_ganadas);
         this.nickname = nickname;
         this.password = password;
         this.avatar = avatar;
-        //this.mis_partidas = mis_partidas;
+      //  this.mis_partidas = null;
     }
+/*
+    public ListaPartida getMis_partidas() {
+        return mis_partidas;
+    }
+
+    public void setMis_partidas(ListaPartida mis_partidas) {
+        this.mis_partidas = mis_partidas;
+    } */
+
     
 
     public String getAvatar() {

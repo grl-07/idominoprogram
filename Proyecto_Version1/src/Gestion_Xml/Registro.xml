@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-    Document   : Registro.xml
-    Created on : 11 de agosto de 2010, 18:50
-    Author     : Blacky G
-    Description:
-        Purpose of the document follows.
--->
-
-<root>
-
-</root>
+<Jugadores tipo="lista de Jugadores"><Jugador><nombre>nanhh</nombre><apellido>jj</apellido><fecha_nac>kj</fecha_nac><score>3</score><cont_ingreso>3</cont_ingreso><partidas_creadas>1</partidas_creadas><partidas_ganadas>1</partidas_ganadas><nickname>hjk</nickname><password>ew</password><avatar>dsd</avatar></Jugador></Jugadores>
