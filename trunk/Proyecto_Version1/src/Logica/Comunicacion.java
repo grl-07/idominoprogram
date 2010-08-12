@@ -21,7 +21,7 @@ public class Comunicacion {
   ListaJugador Registro_Jugadores = new ListaJugador();
   static ListaJugador listaDeJugador = new ListaJugador();
   Jugador Sesion_Jugador;
-  static int numPartida = 1;
+  
   
  public static void obtenerDatos(JTextField nombre, JTextField apellido,JDateChooser fechaNaci, JTextField nickname, JPasswordField password, JLabel avatar)
     {
@@ -42,13 +42,13 @@ public class Comunicacion {
     }
 
 
-        public String crearUsuario(String nickname, String clave, String nombre, String apellido, String fecha, String avatar)
+        public static String crearUsuario(String nickname, String clave, String nombre, String apellido, String fecha, String avatar)
         {
             Calendar fn = Calendar.getInstance(); //Pasar string a fecha
             Jugador registro = new Jugador(nombre, apellido,fecha, 0, 0, 0, 0, nickname,clave,avatar); ;
             listaDeJugador.agregarElemento(registro);
 
-          return "false";
+          return "TRUE";
         }
 
 
@@ -84,9 +84,11 @@ public class Comunicacion {
        int ano = Integer.parseInt(fecha[2]);
        begin.set
        System.out.println(ano);*/
-       
+
+       int numPartida = listaDeJugador.buscar_jugador_nick(nick).getPartidas_creadas();
+       listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida++);
        Partida nueva = new Partida(nick, numPartida);
-       numPartida++;
+       
        Lista_Pieza repartio = nueva.repartirPieza();
 
        Lista_Pieza pc = nueva.obtenerPiezasRestantes(1);
