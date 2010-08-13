@@ -33,6 +33,9 @@ public class Partida {
         this.creador = creador;
     }
 
+
+    
+
     public String getCreador() {
         return creador;
     }

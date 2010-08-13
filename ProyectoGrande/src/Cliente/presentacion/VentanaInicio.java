@@ -137,9 +137,11 @@ public class VentanaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarseActionPerformed
-        this.setVisible(false);
+       this.setVisible(false);
        VentanaRegistro verVentana = new VentanaRegistro();
        verVentana.setVisible(true);
+
+
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jBRegistrarseActionPerformed

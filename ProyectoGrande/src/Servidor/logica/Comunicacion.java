@@ -84,11 +84,18 @@ public class Comunicacion {
        System.out.println("numPartida: " + numPartida);
        listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
        Partida nueva = new Partida( nick, numPartida);
+
+       //modifique aqui
+      
+       nueva.setFecha_inicio(inicio);
+
        
        Lista_Pieza repartio = nueva.repartirPieza();
 
        Lista_Pieza pc = nueva.obtenerPiezasRestantes(1);
        Lista_Pieza pote = nueva.obtenerPiezasRestantes(0);
+
+
 
        ListaPartida  L_partida = new ListaPartida();
        L_partida.agregarPartida(nueva);
