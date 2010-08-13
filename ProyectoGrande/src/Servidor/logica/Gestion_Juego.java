@@ -20,6 +20,9 @@ public class Gestion_Juego implements LogicaServidor
                 return crearPartida(datos);
             if (opcion == 3)
                 return registroUsuario(datos);
+
+            
+
             /*if (opcion == 4)
                 //return guardarPartida(datos);
             if (opcion == 5)
@@ -74,6 +77,7 @@ public class Gestion_Juego implements LogicaServidor
             return "TRUE";
 
         }
+        
 
         public String ingresoSistema(String[] datos)
         {

@@ -13,6 +13,7 @@ package Cliente.presentacion;
 
 //import Ventana_Crear_Cargar_Partida;
 import Cliente.logica.ComunicacionCliente;
+import Cliente.logica.SesionAbierta;
 import javax.swing.*;
 import ve.edu.ucab.cliente.ClienteSocket;
 
@@ -165,6 +166,7 @@ public class VentanaInicio extends javax.swing.JFrame {
                 
                 else{
                     this.dispose();
+                    Cliente.logica.SesionAbierta.setNick_sesion(a);
                    Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
                    verVentana.setVisible(true);
                 }

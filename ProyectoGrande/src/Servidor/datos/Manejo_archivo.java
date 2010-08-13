@@ -60,7 +60,7 @@ public class Manejo_archivo
             /* Se puede obtener el atributo de la raíz (de la etiqueta) */
             System.out.println(raiz.getAttributeValue("tipo"));
 
-            /* Se obtienen todos los hijos cuya etiqueta esa "usuario"  */
+            /* Se obtienen todos los hijos cuya etiqueta esa "Jugador"  */
             /* y se asignan esos hijos a un List                        */
             List l_Jugadores = raiz.getChildren("Jugador");
 
@@ -90,17 +90,60 @@ public class Manejo_archivo
                 Element password = e.getChild("password");
                 Element avatar = e.getChild("avatar");
  //------------------Sacando de lista partida y convirtiendola
-                
+                //crea una lista temporal para captar la lista y se llenada
+                String piezas_cadena_jugador1;
+                String piezas_cadena_jugador2;
+                String piezas_cadena_pote;
+                ListaPartida Lista_Partida_Enviar = new ListaPartida();
 
+             //  obtengo todos las etiquets del jugador que tienen ese nombre
+                List l_partidas = e.getChildren("Partida");
+
+                Iterator z = l_partidas.iterator();
+
+                while (z.hasNext()){
+
+             //      Pieza l_pieza_temporal = new Pieza();
+
+                   //obtengo cada partida de ese jugador
+                   Element y = (Element)z.next();
+
+                   Element creador_e = y.getChild("creador");
+                   Element id_partida_e = y.getChild("id_partida");
+                   Element fecha_inicio_e = y.getChild("fecha_inicio");
+                   Element fecha_actual_e = y.getChild("fecha_actual");
+                   Element piezas_jugador1 = y.getChild("Piezas_jugador1");
+                   Element piezas_jugador2 = y.getChild("Piezas_jugador2");
+                   Element piezas_pote = y.getChild("Piezas_pote");
+
+                   //ahora paso los elementos a cadena para trabajarlos
+                   //la cadena esta en formato x1-y1:x2-y2:x3-y3.....
+                   piezas_cadena_jugador1 = piezas_jugador1.getText();
+                   piezas_cadena_jugador2 = piezas_jugador2.getText();
+                   piezas_cadena_pote = piezas_pote.getText();
+
+                   //CONTRUYENDO LA PARTIDA
+            Partida Partida_temp = new Partida ( creador_e.getText(),Integer.parseInt(id_partida_e.getText())/*
+                fecha_inicio_e.getText(),fecha_actual_e.getText(),
+                Conversor_cadena_partida(piezas_cadena_jugador1),Conversor_cadena_partida(piezas_cadena_jugador2),
+                Conversor_cadena_partida(piezas_cadena_pote) */ );
+            Partida_temp.setJugador1( Conversor_cadena_partida(piezas_cadena_jugador1));
+             Partida_temp.setJugador1( Conversor_cadena_partida(piezas_cadena_jugador2));
+              Partida_temp.setJugador1( Conversor_cadena_partida(piezas_cadena_pote));
+
+                Lista_Partida_Enviar.agregarPartida(Partida_temp);
+
+                }// WHILE DEL LAS PARTIDAS */
 
 //---------------------------------------------------------------
        /* Se crea un nodo nuevo con la información y se agrega a la lista de jugadores            */
       Jugador Gamer = new Jugador( nombre.getText(),apellido.getText(),fecha_nac.getText(), Integer.parseInt(score.getText()),
             Integer.parseInt(cont_ingreso.getText()),Integer.parseInt(partidas_creadas.getText()),
-            Integer.parseInt(partidas_ganadas.getText()),nick_name.getText(),password.getText(),avatar.getText()  );
-                        
+            Integer.parseInt(partidas_ganadas.getText()),nick_name.getText(),password.getText(),avatar.getText());
+       Gamer.setMis_partidas(Lista_Partida_Enviar);
                 listaDeJugadores.agregarElemento(Gamer);
             } // WHILE DE JUGADOR
+
         }
         catch (Exception e)
         {
@@ -113,7 +156,9 @@ public class Manejo_archivo
      * Método public static void guardarArchivoXML(ListaUsuarios listaDeUsuarios): Este método
      * permite guardar la lista de usuarios en un archivo XML. El procesamiento se hace con jdom
      */
-    public static void guardarArchivoXML(ListaJugador listaDeJugadores)
+
+
+    public static void guardarJugadorXML(ListaJugador listaDeJugadores ,ListaPartida L_p)
     {
         Jugador nodoAuxiliar;
         Partida nodoAuxiliar_partida;
@@ -161,17 +206,19 @@ public class Manejo_archivo
             avatar.setText(nodoAuxiliar.getAvatar());
 
    //---------------MANEJO LISTA PARTIDA----DENTRO DEL WHILE DEL JUGADOR-------
-    /*        Element Partidas = new Element("Lista_Partidas");
 
-            Iterator iterador_partidas = nodoAuxiliar.getMis_partidas().getIterator();
+            //CREA LA ETIQUE PARTIDA PERO NOOO SE LLENA
+        //    Element Partidas = new Element("Lista_Partidas");
+     if (L_p!=null ){
+     Iterator iterador_partidas = L_p.getIterator();
 
-            while (iterador_partidas.hasNext())
-        {
+       //     while (iterador_partidas.hasNext())
+     //   {
             // Se crea la etiqueta "Partida"
             Element Partida = new Element("Partida");
 
-            nodoAuxiliar_partida = (Partida) iterador.next();
-
+            nodoAuxiliar_partida = (Partida) iterador_partidas.next();
+      //    nodoAuxiliar_partida =  nodoAuxiliar.getMis_partidas().;
             //Se crean las etiquetas  dentro para introducir lista pieza
 
                 Element id_partida = new Element ("id_partida");
@@ -179,15 +226,15 @@ public class Manejo_archivo
                 Element fecha_inicio = new Element("fecha_inicio");
                 Element fecha_actual = new Element("fecha_actual");
                 Element Piezas_jugador1 = new Element ("Piezas_jugador1");
-                Element Piezas_jugador2 = new Element ("Piezas_Jugador2");
+                Element Piezas_jugador2 = new Element ("Piezas_jugador2");
                 Element Piezas_pote = new Element ("Piezas_pote");
 
 
             //  Se agrega la informacion a las etiquetas creadas
             id_partida.setText(String.valueOf(nodoAuxiliar_partida.getId_partida()) );
             creador.setText(nodoAuxiliar_partida.getCreador());
-            //fecha_inicio.setText(nodoAuxiliar_partida.getFecha_inicio());
-            //fecha_actual.setText(nodoAuxiliar_partida.getFecha_actual() );
+            fecha_inicio.setText( nodoAuxiliar_partida.getFecha_inicio());
+            fecha_actual.setText(nodoAuxiliar_partida.getFecha_actual() );
             Piezas_jugador1.setText(nodoAuxiliar_partida.getJugador1().ObtenerPiezasCadena() );
             Piezas_jugador2.setText(nodoAuxiliar_partida.getJugador2().ObtenerPiezasCadena() );
             Piezas_pote.setText(nodoAuxiliar_partida.getPote().ObtenerPiezasCadena() );
@@ -201,10 +248,13 @@ public class Manejo_archivo
             Partida.addContent(Piezas_jugador2);
             Partida.addContent(Piezas_pote);
 
+            //Partida.addContent(Partida);
+            
+            // }del while de partidas  */
+            Jugadores.addContent(Partida);
 
-            }// del while de partidas  */
  //----------------------------------------------------------------------------
-
+            }
            
             /* Se añaden las etiquetas a la etiqueta principal (usuario)    */
             /* estableciendo que un usuario tiene nombre, apellido y cargo  */
@@ -218,11 +268,13 @@ public class Manejo_archivo
             Jugadores.addContent(nick_name);
             Jugadores.addContent(password);
             Jugadores.addContent(avatar);
-          //  Jugadores.addContent(Partidas);
+            
+            
+
 
 
             /* Se añade el nuevo usuario a la estructura XML */
-            root.addContent(Jugadores);
+          root.addContent(Jugadores);
         } //del while jugadores
 
         /* Se crea un documento nuevo */
@@ -250,8 +302,38 @@ public class Manejo_archivo
         catch(Exception e)
         {
             e.printStackTrace();
+            
 
         }
     }
+
+    
+  
+    
+
+
+    public static Lista_Pieza Conversor_cadena_partida (String cad){
+
+        Lista_Pieza l_pieza = new Lista_Pieza();
+        Pieza pieza_temporal = new Pieza();
+        String [] cadena;
+        int h;
+        cadena = cad.split(":");
+        String [] a;
+        int borrar;
+        //---------------------
+        for (h=0;h<cadena.length;h++){
+                // x1-y1
+            a = (cadena[h]).split("-");
+
+            pieza_temporal.setPintaSuperior(Integer.parseInt(a[0]) );
+            pieza_temporal.setPintaSuperior(Integer.parseInt(a[1]) );
+            l_pieza.agregarPieza(pieza_temporal);
+
+        }
+        return l_pieza;
+
+    }  
+
 }
 

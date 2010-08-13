@@ -6,12 +6,15 @@
 package Servidor.datos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  *
  * @author Blacky G
  */
+  
+
 public class ListaPartida {
       private List <Partida> l_partidas;
 
@@ -20,6 +23,12 @@ public class ListaPartida {
         l_partidas = new ArrayList <Partida>();
      }
 
+        public Iterator getIterator()
+    {
+        return l_partidas.iterator();
+    }
+      
+      
     public void agregarPartida(Partida laPartida)
      {
         l_partidas.add(laPartida);

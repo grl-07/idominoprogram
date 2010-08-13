@@ -15,8 +15,8 @@ import java.util.List;
 public class Partida {
     private int id_partida;
     private String creador;
-    private Calendar fecha_inicio;
-    private Calendar fecha_actual;
+    private String fecha_inicio;
+    private String fecha_actual;
     private Lista_Pieza jugador1;
     private Lista_Pieza jugador2;
     private Lista_Pieza pote;
@@ -33,11 +33,44 @@ public class Partida {
         this.creador = creador;
     }
 
-    public Calendar getFecha_actual() {
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
+    }
+
+    public Lista_Pieza getJugador1() {
+        return jugador1;
+    }
+
+    public void setJugador1(Lista_Pieza jugador1) {
+        this.jugador1 = jugador1;
+    }
+
+    public Lista_Pieza getJugador2() {
+        return jugador2;
+    }
+
+    public void setJugador2(Lista_Pieza jugador2) {
+        this.jugador2 = jugador2;
+    }
+
+    public Lista_Pieza getPote() {
+        return pote;
+    }
+
+    public void setPote(Lista_Pieza pote) {
+        this.pote = pote;
+    }
+
+
+    public String getFecha_actual() {
         return fecha_actual;
     }
 
-    public Calendar getFecha_inicio() {
+    public String getFecha_inicio() {
         return fecha_inicio;
     }
 
@@ -45,11 +78,11 @@ public class Partida {
         return id_partida;
     }
 
-    public void setFecha_actual(Calendar fecha_actual) {
+    public void setFecha_actual(String fecha_actual) {
         this.fecha_actual = fecha_actual;
     }
 
-    public void setFecha_inicio(Calendar fecha_inicio) {
+    public void setFecha_inicio(String fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 

@@ -177,6 +177,41 @@ public class Lista_Pieza {
     }
 
 
+// obtiene la lista de piezas como una cadena en formato (x1-y1:x2-y2:...)
+    public String ObtenerPiezasCadena(){
+
+         int i;
+        Pieza registro;
+        /*
+         * Se define un arreglo de tipo Object (la clase genérica Java)
+         */
+        Object [] arreglo;
+
+        /*
+         * Se convierte la colección pasada como parámetro a un array, que
+         * es asignado al arreglo de tipo Object
+         */
+        arreglo = miListaPieza.toArray();
+
+        // en cadena se guardara la cadena con el formato ya dicho
+        String cadena = "";
+        /*
+         * Se hace un recorrido del arreglo de tipo Object y se imprime
+         * la información de la casilla i
+         */
+        for(i=0 ; i<arreglo.length ; i++)
+        {
+            registro = (Pieza) arreglo[i];
+            //se arma el formato en la cadena
+            if (i != (arreglo.length - 1) )
+            cadena = (cadena+registro.getPintaSuperior()+"-"+registro.getPintainferior()+":");
+            else
+            cadena = (cadena+registro.getPintaSuperior()+"-"+registro.getPintainferior());
+
+        }
+
+       return cadena;
+    }
 
 
 }

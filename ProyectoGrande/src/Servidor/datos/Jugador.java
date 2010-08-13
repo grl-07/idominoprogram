@@ -17,7 +17,7 @@ public class Jugador extends Usuario
     private String nickname;
     private String password;
     private String avatar;
-   // private ListaPartida mis_partidas;
+    private ListaPartida mis_partidas;
 
     //constructor clase jugador
     public Jugador(String nombre, String apellido,/*Calendar*/ String fecha_nac, int score, int cont_ingreso,
@@ -28,7 +28,15 @@ public class Jugador extends Usuario
         this.nickname = nickname;
         this.password = password;
         this.avatar = avatar;
-        //this.mis_partidas = mis_partidas;
+        this.mis_partidas = new ListaPartida();
+    }
+
+    public ListaPartida getMis_partidas() {
+        return mis_partidas;
+    }
+
+    public void setMis_partidas(ListaPartida mis_partidas) {
+        this.mis_partidas = mis_partidas;
     }
     
 

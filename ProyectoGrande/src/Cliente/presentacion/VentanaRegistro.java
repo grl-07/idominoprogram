@@ -355,6 +355,8 @@ public class VentanaRegistro extends javax.swing.JFrame {
       String resultado = cliente.ejecutarPeticion("3:" + nick + ":" + cedula + ":" + nombre + ":" + apellido + ":" + fecha + ":" + avatar, "localhost", 7687);
         System.out.println(resultado);
         resultado += ":" + nombre + ":" + apellido + ":" + avatar;
+
+        Cliente.logica.SesionAbierta.setNick_sesion(nick);
       this.setVisible(false);
             Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
             verVentana.setVisible(true);

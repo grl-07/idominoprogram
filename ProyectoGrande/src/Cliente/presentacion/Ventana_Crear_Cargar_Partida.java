@@ -115,6 +115,7 @@ public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
 
     private void jBCargar_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCargar_PActionPerformed
         //LO QUE HARA EL BOTON
+      //  String resultado = ComunicacionCliente.peticionServidor(apellido, WIDTH)
         Ventana_Cargar_Partida Ventana = new Ventana_Cargar_Partida();
         Ventana.setVisible(true);
         this.dispose();

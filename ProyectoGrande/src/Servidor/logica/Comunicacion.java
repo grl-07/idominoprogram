@@ -5,13 +5,17 @@
 
 package Servidor.logica;
 
+import Cliente.logica.SesionAbierta;
 import Servidor.datos.Jugador;
 import Servidor.datos.ListaJugador;
 import Servidor.datos.Lista_Pieza;
+import Servidor.datos.ListaPartida;
 import Servidor.datos.Partida;
 import com.toedter.calendar.JDateChooser;
 import java.util.Calendar;
+import java.util.Iterator;
 import javax.swing.*;
+
 /**
  *
  * @author Blacky G
@@ -32,7 +36,7 @@ public class Comunicacion {
             Calendar fn = Calendar.getInstance(); //Pasar string a fecha
             Jugador registro = new Jugador(nombre, apellido,fecha, 0, 1, 0, 0, nickname,clave,avatar); ;
             listaDeJugador.agregarElemento(registro);
-            Servidor.datos.Manejo_archivo.guardarArchivoXML(listaDeJugador);
+            Servidor.datos.Manejo_archivo.guardarJugadorXML(listaDeJugador,null);
           return "TRUE";
         }
 
@@ -79,21 +83,36 @@ public class Comunicacion {
        numPartida++;
        System.out.println("numPartida: " + numPartida);
        listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
-       Partida nueva = new Partida(nick, numPartida);
+       Partida nueva = new Partida( nick, numPartida);
        
        Lista_Pieza repartio = nueva.repartirPieza();
 
        Lista_Pieza pc = nueva.obtenerPiezasRestantes(1);
        Lista_Pieza pote = nueva.obtenerPiezasRestantes(0);
+
+       ListaPartida  L_partida = new ListaPartida();
+       L_partida.agregarPartida(nueva);
+
+       
       // pc.imprimirColeccion();
       // pote.imprimirColeccion();
        listaDeJugador.imprimirListaJugador();
-       Servidor.datos.Manejo_archivo.guardarArchivoXML(listaDeJugador);
+       Servidor.datos.Manejo_archivo.guardarJugadorXML(listaDeJugador,L_partida);
        return nueva.listaDePiezas();
    }
 
    public static String obtenerNickJugador(String nombre){
        return listaDeJugador.buscar_jugador_nombre(nombre).getNickname();
+   }
+
+
+   public static String CargarPartida ( String nick ){
+       Servidor.datos.Manejo_archivo.leerArchivoXML(listaDeJugador);
+       Iterator x = listaDeJugador.buscar_jugador_nick(SesionAbierta.getNick_sesion()  ).getMis_partidas().getIterator();
+          Partida p =  (Partida) x.next();
+
+          return p.listaDePiezas();
+
    }
 
 
