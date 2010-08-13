@@ -32,14 +32,14 @@ public class Manejo_archivo
             // se crea el documento en momoria
         Document doc = builder.build(nombreArchivo);
         prueba = doc.hasRootElement();
+        return false;
         }
         catch (Exception e)
         {
-            return prueba;
-        }
-        finally{
+            System.out.println("entro true");
             return true;
         }
+        
     }
 
     //lista usuario se modifica

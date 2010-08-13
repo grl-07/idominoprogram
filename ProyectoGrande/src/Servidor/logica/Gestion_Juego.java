@@ -15,10 +15,8 @@ public class Gestion_Juego implements LogicaServidor
             String pedido = datos[0];
             int opcion = Integer.parseInt(pedido);
             if (opcion == 1)
-                //System.out.println("entro al opcion");
                 return ingresoSistema(datos);  //Hacer un Case
             if (opcion == 2)
-                //System.out.println("entro al opcion");
                 return crearPartida(datos);
             if (opcion == 3)
                 return registroUsuario(datos);
@@ -30,7 +28,9 @@ public class Gestion_Juego implements LogicaServidor
                 //return finPartida(datos);
             if (opcion == 7)*/
                 //return agarrarDelPote(datos);
-         return "FALSE";
+           if (opcion == 8)
+               return obtenerNick(datos);
+        return "FALSE";
         }
 
         Jugador elJugador, elJugador1;
@@ -105,6 +105,12 @@ public class Gestion_Juego implements LogicaServidor
             String nick = datos[1];
             String fecha = datos[2];
             return Comunicacion.nuevaPartida(nick, fecha); //Falta hacer fecha
+        }
+
+        public String obtenerNick (String [] datos)
+        {
+            String nombre = datos[1];
+            return Comunicacion.obtenerNickJugador(nombre);
         }
 
 

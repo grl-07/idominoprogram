@@ -23,7 +23,7 @@ public class Comunicacion {
 
  //luego cargar desde archivo xml
   ListaJugador Registro_Jugadores = new ListaJugador();
-  static ListaJugador listaDeJugador = new ListaJugador();
+  static ListaJugador listaDeJugador;// = new ListaJugador();
   Jugador Sesion_Jugador;
   
   
@@ -47,8 +47,12 @@ public class Comunicacion {
    {
        //Calendar fn = Calendar.getInstance();
        //Jugador registro = new Jugador ("nombre", "apellido", "cedula", "fn", 0, 0, 0, 0, "nick", "clave", "avatar");
-       if (Servidor.datos.Manejo_archivo.esArchivoVacio() == false)
-       Servidor.datos.Manejo_archivo.leerArchivoXML(listaDeJugador);
+       if (Servidor.datos.Manejo_archivo.esArchivoVacio() == false){
+           listaDeJugador = new ListaJugador();
+           Servidor.datos.Manejo_archivo.leerArchivoXML(listaDeJugador);
+       }
+       else
+           listaDeJugador = new ListaJugador();
    }
 
    public static void imprimirLista()
@@ -72,16 +76,24 @@ public class Comunicacion {
        System.out.println(ano);*/
 
        int numPartida = listaDeJugador.buscar_jugador_nick(nick).getPartidas_creadas();
-       listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida++);
+       numPartida++;
+       System.out.println("numPartida: " + numPartida);
+       listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
        Partida nueva = new Partida(nick, numPartida);
        
        Lista_Pieza repartio = nueva.repartirPieza();
 
        Lista_Pieza pc = nueva.obtenerPiezasRestantes(1);
        Lista_Pieza pote = nueva.obtenerPiezasRestantes(0);
-       pc.imprimirColeccion();
-       pote.imprimirColeccion();
+      // pc.imprimirColeccion();
+      // pote.imprimirColeccion();
+       listaDeJugador.imprimirListaJugador();
+       Servidor.datos.Manejo_archivo.guardarArchivoXML(listaDeJugador);
        return nueva.listaDePiezas();
+   }
+
+   public static String obtenerNickJugador(String nombre){
+       return listaDeJugador.buscar_jugador_nombre(nombre).getNickname();
    }
 
 

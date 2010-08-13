@@ -59,6 +59,13 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jRBJugadorRubia = new javax.swing.JRadioButton();
         jRBJugadorStewie = new javax.swing.JRadioButton();
         jDCFechaNaci = new com.toedter.calendar.JDateChooser();
+        jLAvatar = new javax.swing.JLabel();
+        jLJugadorHomero = new javax.swing.JLabel();
+        jLJugadorPlayera = new javax.swing.JLabel();
+        jLJugadorFumon = new javax.swing.JLabel();
+        jLStewie = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLShrek = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro De Usuario");
@@ -100,7 +107,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +115,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
+        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jBAtras.setText("<< Atras");
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,63 +140,77 @@ public class VentanaRegistro extends javax.swing.JFrame {
         jDCFechaNaci.setDateFormatString("dd/MM/yy");
         jDCFechaNaci.setName("jDCFechaNaci"); // NOI18N
 
+        jLAvatar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jLAvatar.setText("Avatar");
+
+        jLJugadorHomero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorHomero.jpg"))); // NOI18N
+
+        jLJugadorPlayera.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorPlayera.jpg"))); // NOI18N
+
+        jLJugadorFumon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorFumon.jpg"))); // NOI18N
+
+        jLStewie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorStewie.jpg"))); // NOI18N
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorRubia.jpg"))); // NOI18N
+
+        jLShrek.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorShrek.jpg"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLNombre, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLApellido, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLFechaNaci, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLNickName, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLPassword, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRBJugadorStewie)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRBJugadorHomero)
-                                        .addGap(6, 6, 6)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jRBJugadorPlayera)
-                                    .addComponent(jRBJugadorRubia))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRBJugadorFumon)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jBGuardar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(39, 39, 39)
-                                        .addComponent(jRBJugadorShrek))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTPFPassword)
-                                .addComponent(jTFNickName)
-                                .addComponent(jTFApellido)
-                                .addComponent(jTFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                .addComponent(jDCFechaNaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(114, 114, 114))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jBAtras)
-                        .addGap(237, 237, 237))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(171, 171, 171)
-                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                 .addGap(165, 165, 165))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLApellido, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLFechaNaci, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLNickName, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLAvatar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBAtras)
+                        .addGap(80, 80, 80)
+                        .addComponent(jBGuardar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLJugadorHomero, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRBJugadorHomero))
+                            .addComponent(jLStewie)
+                            .addComponent(jRBJugadorStewie))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLJugadorPlayera)
+                            .addComponent(jRBJugadorPlayera)
+                            .addComponent(jRBJugadorRubia)
+                            .addComponent(jLabel1))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRBJugadorFumon)
+                            .addComponent(jLJugadorFumon)
+                            .addComponent(jLShrek)
+                            .addComponent(jRBJugadorShrek)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTPFPassword)
+                        .addComponent(jTFNickName)
+                        .addComponent(jTFApellido)
+                        .addComponent(jTFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(jDCFechaNaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(114, 114, 114))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
+                .addGap(74, 74, 74)
                 .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -211,29 +232,54 @@ public class VentanaRegistro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLPassword)
                     .addComponent(jTPFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRBJugadorFumon)
-                            .addComponent(jRBJugadorPlayera))
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jRBJugadorHomero, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRBJugadorStewie)
-                    .addComponent(jRBJugadorRubia)
-                    .addComponent(jRBJugadorShrek))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBAtras)
-                    .addComponent(jBGuardar))
-                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLJugadorHomero, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addGap(28, 28, 28))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLJugadorFumon)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jRBJugadorFumon))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLJugadorPlayera)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jRBJugadorPlayera))
+                                    .addComponent(jRBJugadorHomero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLStewie)
+                            .addComponent(jLShrek)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLAvatar)
+                        .addGap(113, 113, 113)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRBJugadorStewie)
+                            .addComponent(jRBJugadorRubia))
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBAtras)
+                            .addComponent(jBGuardar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jRBJugadorShrek)))
+                .addGap(48, 48, 48))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-480)/2, (screenSize.height-695)/2, 480, 695);
+        setBounds((screenSize.width-480)/2, (screenSize.height-792)/2, 480, 792);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNombreActionPerformed
@@ -247,7 +293,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
         String nombre, apellido, cedula, nick,avatar, fecha ;
-        cedula= "";
+        avatar= "";
         Calendar prueba;
         prueba = Calendar.getInstance();
         prueba = jDCFechaNaci.getCalendar();
@@ -304,11 +350,13 @@ public class VentanaRegistro extends javax.swing.JFrame {
       apellido = jTFApellido.getText();
       nick = jTFNickName.getText();
       cedula = jTPFPassword.getText();
+      //avatar = jLAvatar.getName();
         System.out.println(cedula);
-      String resultado = cliente.ejecutarPeticion("3:" + nick + ":" + cedula + ":" + nombre + ":" + apellido + ":" + fecha + ":C&D", "localhost", 7687);
+      String resultado = cliente.ejecutarPeticion("3:" + nick + ":" + cedula + ":" + nombre + ":" + apellido + ":" + fecha + ":" + avatar, "localhost", 7687);
         System.out.println(resultado);
+        resultado += ":" + nombre + ":" + apellido + ":" + avatar;
       this.setVisible(false);
-            Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+            Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
             verVentana.setVisible(true);
             //String fecha= String.format(DD, MM,AA);
             //Comunicacion.obtenerDatos(jTFNombre, jTFApellido, jTFCedula, jDCFechaNaci.getDateFormatString(), jTFNickName, jTPFPassword, jLAvatar);
@@ -366,11 +414,18 @@ public class VentanaRegistro extends javax.swing.JFrame {
     private javax.swing.JButton jBGuardar;
     private com.toedter.calendar.JDateChooser jDCFechaNaci;
     private javax.swing.JLabel jLApellido;
+    private javax.swing.JLabel jLAvatar;
     private javax.swing.JLabel jLFechaNaci;
+    private javax.swing.JLabel jLJugadorFumon;
+    private javax.swing.JLabel jLJugadorHomero;
+    private javax.swing.JLabel jLJugadorPlayera;
     private javax.swing.JLabel jLNickName;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLPassword;
+    private javax.swing.JLabel jLShrek;
+    private javax.swing.JLabel jLStewie;
     private javax.swing.JLabel jLTituloRegistroUsuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRBJugadorFumon;
     private javax.swing.JRadioButton jRBJugadorHomero;
     private javax.swing.JRadioButton jRBJugadorPlayera;

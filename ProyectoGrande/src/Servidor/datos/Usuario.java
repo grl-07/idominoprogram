@@ -72,15 +72,15 @@ public class Usuario {
     }
 
     public void setPartidas_creadas(int partidas_creadas) {
-        this.partidas_creadas = 0;  //partidas_creadas;
+        this.partidas_creadas = partidas_creadas;  //partidas_creadas;
     }
 
     public void setPartidas_ganadas(int partidas_ganadas) {
-        this.partidas_ganadas = 0;  //partidas_ganadas;
+        this.partidas_ganadas = partidas_ganadas;  //partidas_ganadas;
     }
 
     public void setScore(int score) {
-        this.score = 0; //score;
+        this.score = score; //score;
     }
 
 

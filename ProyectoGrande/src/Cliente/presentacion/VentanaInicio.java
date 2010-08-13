@@ -12,6 +12,7 @@
 package Cliente.presentacion;
 
 //import Ventana_Crear_Cargar_Partida;
+import Cliente.logica.ComunicacionCliente;
 import javax.swing.*;
 import ve.edu.ucab.cliente.ClienteSocket;
 
@@ -156,15 +157,15 @@ public class VentanaInicio extends javax.swing.JFrame {
         }
         else
         {
-                ClienteSocket cliente = new ClienteSocket();
-                String resultado = cliente.ejecutarPeticion("1:" + a + ":" + b, "localhost", 7687);
+                String resultado = ComunicacionCliente.peticionServidor("1:" + a + ":" + b, 1);
+                System.out.println(resultado);
                 if (resultado.length() == 5)
-                   JOptionPane.showMessageDialog(this, "JODETE Y REGISTRATE xD");
+                   JOptionPane.showMessageDialog(this, "USUARIO NO EXISTE");
 
                 
                 else{
                     this.dispose();
-                   Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida();
+                   Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
                    verVentana.setVisible(true);
                 }
                     

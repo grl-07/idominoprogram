@@ -11,6 +11,8 @@
 
 package Cliente.presentacion;
 
+import Cliente.logica.ComunicacionCliente;
+
 /**
  *
  * @author Robert
@@ -18,7 +20,17 @@ package Cliente.presentacion;
 public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
 
     /** Creates new form Ventana_Crear_Cargar_Partida */
-    public Ventana_Crear_Cargar_Partida() {
+    String nombre;
+    String apellido;
+    String avatar;
+    String nickJugador;
+
+    public Ventana_Crear_Cargar_Partida(String args) {
+        String [] datos = args.split(":");
+        nombre = datos[1];
+        apellido = datos[2];
+        avatar = datos[3];
+        nickJugador = ComunicacionCliente.peticionServidor("8:" + nombre, 100);
         initComponents();
     }
 
@@ -91,6 +103,13 @@ public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCrearr_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearr_PActionPerformed
+        this.setVisible(false);
+        VentanaCrearPartida Ventana = new VentanaCrearPartida();
+        Ventana.setVisible(true);
+        String resultado = ComunicacionCliente.peticionServidor("2:"+ nickJugador + ":12/01/10", 2);
+        
+        System.out.println(resultado);
+
 
 }//GEN-LAST:event_jBCrearr_PActionPerformed
 
@@ -115,7 +134,7 @@ public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ventana_Crear_Cargar_Partida().setVisible(true);
+                new Ventana_Crear_Cargar_Partida("a").setVisible(true);
             }
         });
     }
