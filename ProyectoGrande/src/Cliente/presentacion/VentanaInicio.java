@@ -168,7 +168,8 @@ public class VentanaInicio extends javax.swing.JFrame {
                 
                 else{
                     this.dispose();
-                    Cliente.logica.SesionAbierta.setNick_sesion(a);
+
+                   // Cliente.logica.SesionAbierta.setNick_sesion(a);
                    Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
                    verVentana.setVisible(true);
                 }

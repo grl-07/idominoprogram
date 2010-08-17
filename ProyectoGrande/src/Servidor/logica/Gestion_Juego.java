@@ -2,7 +2,7 @@ package Servidor.logica;
 
 
 import Servidor.datos.Jugador;
-import Servidor.logica.Comunicacion;
+//import Servidor.logica.Comunicacion;
 import java.util.Calendar;
 import ve.edu.ucab.server.logica.LogicaServidor;
 
@@ -31,8 +31,8 @@ public class Gestion_Juego implements LogicaServidor
                 //return finPartida(datos);
             if (opcion == 7)*/
                 //return agarrarDelPote(datos);
-           if (opcion == 8)
-               return obtenerNick(datos);
+          // if (opcion == 8)
+          //     return obtenerNick(datos);
         return "FALSE";
         }
 
@@ -52,6 +52,7 @@ public class Gestion_Juego implements LogicaServidor
             String iDavatar = datos[6];
             Comunicacion.crearUsuario(nickname, clave, nombre, apellido, fechaNac, iDavatar);
             System.out.println("IMPRIMIR EN REGISTRO: ");
+            //imprime la lista de usuarios que estan cargados
             Comunicacion.imprimirLista();
 
             return "TRUE";
@@ -92,7 +93,7 @@ public class Gestion_Juego implements LogicaServidor
 
             //if (control != null)
             //{
-               Jugador ingreso = Comunicacion.getListaDeJugador().buscar_jugador(nombre, clave);
+               Jugador ingreso = Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador(nombre, clave);
                
                if (ingreso != null)
                {
@@ -107,15 +108,15 @@ public class Gestion_Juego implements LogicaServidor
         public String crearPartida(String[] datos)
         {
             String nick = datos[1];
-            String fecha = datos[2];
-            return Comunicacion.nuevaPartida(nick, fecha); //Falta hacer fecha
+            String fecha_a = datos[2];
+            return Comunicacion.nuevaPartida(nick, fecha_a); //Falta hacer fecha
         }
 
-        public String obtenerNick (String [] datos)
-        {
-            String nombre = datos[1];
-            return Comunicacion.obtenerNickJugador(nombre);
-        }
+   //     public String obtenerNick (String [] datos)
+   //     {
+   //         String nombre = datos[1];
+   //         return Comunicacion.obtenerNickJugador(nombre);
+   //     }
 
 
 }
