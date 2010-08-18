@@ -356,8 +356,9 @@ public class VentanaRegistro extends javax.swing.JFrame {
         System.out.println(resultado);
         resultado += ":" + nombre + ":" + apellido + ":" + avatar;
 
-        Cliente.logica.SesionAbierta.setNick_sesion(nick);
-      this.setVisible(false);
+        //en la sesion abierta se guarda el nick que tiene
+        Cliente.logica.SesionAbierta.Nick_sesion = nick;
+           this.setVisible(false);
             Ventana_Crear_Cargar_Partida verVentana = new Ventana_Crear_Cargar_Partida(resultado);
             verVentana.setVisible(true);
             //String fecha= String.format(DD, MM,AA);

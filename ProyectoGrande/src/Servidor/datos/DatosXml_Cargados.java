@@ -15,25 +15,6 @@ public class DatosXml_Cargados {
 
      //luego cargar desde archivo xml
      //ListaJugador Registro_Jugadores = new ListaJugador();
-    static ListaJugador listaDeJugador;
+    public static ListaJugador listaDeJugador = new ListaJugador();
 
-    public DatosXml_Cargados() {
-
-        listaDeJugador = new ListaJugador();
-
-    }
-   
-    public static ListaJugador getListaDeJugador() {
-        return listaDeJugador;
-    }
-
-    public static void setListaDeJugador(ListaJugador listaDeJugador) {
-        DatosXml_Cargados.listaDeJugador = listaDeJugador;
-    }
-    // Jugador Sesion_Jugador;
-
-     public static void imprimirLista()
-   {
-       listaDeJugador.imprimirListaJugador();
-   }
 }

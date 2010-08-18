@@ -11,15 +11,9 @@ package Cliente.logica;
  */
 public class SesionAbierta {
 
-     static String Nick_sesion;
+    public static String Nick_sesion;
 
-    public static String getNick_sesion() {
-        return Nick_sesion;
-    }
-
-    public static void setNick_sesion(String Nick_sesion) {
-        SesionAbierta.Nick_sesion = Nick_sesion;
-    }
+   
 
 
 

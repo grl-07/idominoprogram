@@ -42,6 +42,22 @@ public class Usuario {
         return apellido;
     }
 
+    public int getCont_ingreso() {
+        return Cont_ingreso;
+    }
+
+    public int getPartidas_creadas() {
+        return partidas_creadas;
+    }
+
+    public int getPartidas_ganadas() {
+        return partidas_ganadas;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
 
     public /*Calendar*/ String getFecha_nac() {
         //return fechaNaci;

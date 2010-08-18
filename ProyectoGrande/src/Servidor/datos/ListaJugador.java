@@ -38,7 +38,7 @@ public class ListaJugador {
     {
         int i;
         Jugador registro;
-
+  
         /*
          * Se define un arreglo de tipo Object (la clase genérica Java)
          */
@@ -74,6 +74,7 @@ public class ListaJugador {
         }
 
         System.out.println("\n\n");
+    
     }
 
 
@@ -121,9 +122,9 @@ public class ListaJugador {
      * Método public boolean agregarElemento(Nodo objeto): Este método agrega
      * el Nodo "objeto" a la colección miSet
      */
-    public boolean agregarElemento(Jugador objeto)
+    public void agregarElemento(Jugador objeto)
     {
-        return ElJugador.add(objeto);
+         ElJugador.add(objeto);
     }
 
     /**

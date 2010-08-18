@@ -56,14 +56,6 @@ public class Jugador extends Usuario
         return Cont_ingreso;
     }
 
-    public int getPartidas_creadas() {
-        return partidas_creadas;
-    }
-
-    public int getPartidas_ganadas() {
-        return partidas_ganadas;
-    }
-
     public int getScore() {
         return score;
     }

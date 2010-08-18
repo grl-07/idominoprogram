@@ -33,13 +33,25 @@ public class Comunicacion {
   
         public static String crearUsuario(String nickname, String clave, String nombre, String apellido, String fecha, String avatar)
         {
-            Calendar fn = Calendar.getInstance(); //Pasar string a fecha
-            Jugador registro = new Jugador(nombre, apellido,fecha, 0, 1, 0, 0, nickname,clave,avatar);
+           
+
+              Calendar fn = Calendar.getInstance(); //Pasar string a fecha
+             Jugador registro = new Jugador(nombre, apellido,fecha, 0, 1, 0, 0, nickname,clave,avatar);
+
 
             //toma todo desde la carga que esta en datos xml_cargados
-            Servidor.datos.DatosXml_Cargados.getListaDeJugador().agregarElemento(registro);
-            Servidor.datos.Manejo_archivo.guardarJugadorXML(Servidor.datos.DatosXml_Cargados.getListaDeJugador(),null);
-          return "TRUE";
+
+             //AQUI ESTA EL PROBLEMITA DND SE QUEDA PEGADO
+            System.out.println("entroooo aquiiiii  hhhhh");
+
+           //
+           Servidor.datos.DatosXml_Cargados.listaDeJugador.agregarElemento(registro);
+        //   Servidor.datos.DatosXml_Cargados.listaDeJugador.imprimirListaJugador();
+
+           
+   Servidor.datos.Manejo_archivo.guardarJugadorXML(Servidor.datos.DatosXml_Cargados.listaDeJugador,null);
+
+          return ("TRUE");
         }
 
 
@@ -55,7 +67,7 @@ public class Comunicacion {
        //Jugador registro = new Jugador ("nombre", "apellido", "cedula", "fn", 0, 0, 0, 0, "nick", "clave", "avatar");
        if (Servidor.datos.Manejo_archivo.esArchivoVacio() == false){
           // listaDeJugador = new ListaJugador();
-           Servidor.datos.Manejo_archivo.leerArchivoXML(Servidor.datos.DatosXml_Cargados.getListaDeJugador());
+           Servidor.datos.Manejo_archivo.leerArchivoXML(Servidor.datos.DatosXml_Cargados.listaDeJugador);
        }
   //     else
     //       listaDeJugador = new ListaJugador();
@@ -63,7 +75,7 @@ public class Comunicacion {
 
   public static void imprimirLista()
    {
-       Servidor.datos.DatosXml_Cargados.getListaDeJugador().imprimirListaJugador();
+       Servidor.datos.DatosXml_Cargados.listaDeJugador.imprimirListaJugador();
   }
 
   // public static ListaJugador getLista()
@@ -81,12 +93,20 @@ public class Comunicacion {
        begin.set
        System.out.println(ano);*/
 
-       int numPartida = Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador_nick(nick).getPartidas_creadas();
-       numPartida++;
-       System.out.println("numPartida: " + numPartida);
+     int numPartida = Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nick).getPartidas_creadas();
+     numPartida++;
+     Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
+
+    // Jugador; jota = Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nick);
+    //   System.out.println(jota);
+
+   //  jota.getPartidas_creadas();
+     //  numPartida++;
+     // Jota.setPartidas_creadas(numPartida);
+     //  System.out.println("numPartida: " + numPartida);
 
        //aumenta el numeor de partidas creadas
-       Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
+      //000  Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nick).setPartidas_creadas(numPartida);
 
        //crea la partida en una variable nueva
        Partida nueva_partida = new Partida(nick, numPartida);
@@ -104,15 +124,27 @@ public class Comunicacion {
        Lista_Pieza pote = nueva_partida.obtenerPiezasRestantes(0);
 
        //se crea una lista nueva
-     //  ListaPartida  L_partida = new ListaPartida();
-     //  L_partida.agregarPartida(nueva);
+       ListaPartida  L_partida = new ListaPartida();
+       L_partida.agregarPartida(nueva_partida);
 
 
        //se agrega la partida creada al jugador perteneciente al nick en la lista principal
-        Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador_nick(nick)
+       Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nick)
              .getMis_partidas().agregarPartida(nueva_partida);
       // listaDeJugador.imprimirListaJugador();
-  //   Servidor.datos.Manejo_archivo.guardarJugadorXML(listaDeJugador,L_partida);
+      Servidor.datos.Manejo_archivo.guardarJugadorXML(Servidor.datos.DatosXml_Cargados.listaDeJugador,L_partida);
+
+      //para ver si lo ahce bien
+    /*  Iterator x = L_partida.getIterator();
+
+      while ( x.hasNext() ){
+
+          System.out.println( x.next() );
+      }
+
+      */
+
+      //------------------------
 
       //se devuelven las piezas del jugador
       return nueva_partida.listaDePiezas();
@@ -122,7 +154,7 @@ public class Comunicacion {
 
 
    public static String obtenerNickJugador(String nombre){
-       return Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador_nombre(nombre).getNickname();
+       return Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nombre(nombre).getNickname();
    }
 
 

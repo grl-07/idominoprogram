@@ -50,12 +50,15 @@ public class Gestion_Juego implements LogicaServidor
             String apellido = datos[4];
             String fechaNac = datos[5];
             String iDavatar = datos[6];
-            Comunicacion.crearUsuario(nickname, clave, nombre, apellido, fechaNac, iDavatar);
-            System.out.println("IMPRIMIR EN REGISTRO: ");
-            //imprime la lista de usuarios que estan cargados
-            Comunicacion.imprimirLista();
 
-            return "TRUE";
+
+            //el problma al guardar esta aqui
+
+          //  System.out.println("IMPRIMIR EN REGISTRO: "+nickname+clave+nombre+apellido+fechaNac+iDavatar);
+            //imprime la lista de usuarios que estan cargados
+         //   Comunicacion.imprimirLista();
+
+            return Comunicacion.crearUsuario(nickname, clave, nombre, apellido, fechaNac, iDavatar);
         }
 
         public String guardarPartida(String[] datos)
@@ -93,7 +96,7 @@ public class Gestion_Juego implements LogicaServidor
 
             //if (control != null)
             //{
-               Jugador ingreso = Servidor.datos.DatosXml_Cargados.getListaDeJugador().buscar_jugador(nombre, clave);
+               Jugador ingreso = Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador(nombre, clave);
                
                if (ingreso != null)
                {

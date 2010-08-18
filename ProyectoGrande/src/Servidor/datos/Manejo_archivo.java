@@ -203,17 +203,18 @@ public class Manejo_archivo
             partidas_ganadas.setText( String.valueOf(nodoAuxiliar.getPartidas_ganadas()) );
             nick_name.setText(nodoAuxiliar.getNickname());
             password.setText(nodoAuxiliar.getPassword());
-            avatar.setText(nodoAuxiliar.getAvatar());
+            avatar.setText(nodoAuxiliar.getAvatar());  
 
    //---------------MANEJO LISTA PARTIDA----DENTRO DEL WHILE DEL JUGADOR-------
 
-            //CREA LA ETIQUE PARTIDA PERO NOOO SE LLENA
-        //    Element Partidas = new Element("Lista_Partidas");
-     if (L_p!=null ){
-     Iterator iterador_partidas = L_p.getIterator();
+            //CREA LA ETIQUE PARTIDA 
+           Element L_Partidas = new Element("Lista_Partidas");
+       if (L_p!=null ){
 
-       //     while (iterador_partidas.hasNext())
-     //   {
+     Iterator iterador_partidas = nodoAuxiliar.getMis_partidas().getIterator();
+
+       while (iterador_partidas.hasNext())
+         {
             // Se crea la etiqueta "Partida"
             Element Partida = new Element("Partida");
 
@@ -248,13 +249,17 @@ public class Manejo_archivo
             Partida.addContent(Piezas_jugador2);
             Partida.addContent(Piezas_pote);
 
-            //Partida.addContent(Partida);
-            
-            // }del while de partidas  */
-            Jugadores.addContent(Partida);
 
+            L_Partidas.addContent(Partida);
+
+            
+            } //while de partidas  
+
+         }//del if
+            
+           
  //----------------------------------------------------------------------------
-            }
+            //TRABAJAR AQUI
            
             /* Se añaden las etiquetas a la etiqueta principal (usuario)    */
             /* estableciendo que un usuario tiene nombre, apellido y cargo  */
@@ -268,11 +273,9 @@ public class Manejo_archivo
             Jugadores.addContent(nick_name);
             Jugadores.addContent(password);
             Jugadores.addContent(avatar);
-            
-            
+            Jugadores.addContent(L_Partidas);
 
-
-
+           
             /* Se añade el nuevo usuario a la estructura XML */
           root.addContent(Jugadores);
         } //del while jugadores
@@ -283,7 +286,7 @@ public class Manejo_archivo
         try
         {
             /* Se genera un flujo de salida de datos XML */
-            XMLOutputter out = new XMLOutputter();
+            XMLOutputter out = new XMLOutputter(Format.getPrettyFormat());
 
             /* Se asocia el flujo de salida con el archivo donde se guardaran los datos */
             FileOutputStream file = new FileOutputStream(nombreArchivo);

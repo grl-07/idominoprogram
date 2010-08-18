@@ -106,7 +106,7 @@ public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
         this.setVisible(false);
         VentanaCrearPartida Ventana = new VentanaCrearPartida();
         Ventana.setVisible(true);
-        String resultado = ComunicacionCliente.peticionServidor("2:"+  Cliente.logica.SesionAbierta.getNick_sesion()/*nickJugador*/ + ":12/01/10", 2);
+        String resultado = ComunicacionCliente.peticionServidor("2:"+  Cliente.logica.SesionAbierta.Nick_sesion/*nickJugador*/ + ":12/01/10", 2);
         
         System.out.println(resultado);
 
