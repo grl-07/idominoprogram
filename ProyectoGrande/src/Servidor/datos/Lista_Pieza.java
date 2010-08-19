@@ -5,6 +5,7 @@
 
 package Servidor.datos;
 import java.util.*;
+
 /**
  *
  * @author Diego
@@ -29,17 +30,20 @@ public class Lista_Pieza {
 
     public void llenar()
     {
-        int control = 0;
-        for (int i = 0; i <= 6; i++){
-            for (int j = control; j <= 6; j++)
-            {
-               Pieza a = new Pieza(i,j);
-               miListaPieza.add(a);
+      //  int control = 0;
+      //  for (int i = 0; i <= 6; i++){
+       //     for (int j = control; j <= 6; j++)
+         //   {
+      //Lista_Pieza a = new Lista_Pieza();
+        System.out.println("SIMPSON ENTRANDO A OBTENER PIEZAS PRE CARGADAS");
+      miListaPieza = Lectura_piezas_precargadas.Obtener_piezas_precargadas(miListaPieza);
+       
+              // miListaPieza.add(a);
                //System.out.println("pieza: " + i + "-" + j);
-            }
-            control++;
+            //}
+           // control++;
 
-        }
+       // }
     }
 
 
@@ -199,14 +203,24 @@ public class Lista_Pieza {
          * Se hace un recorrido del arreglo de tipo Object y se imprime
          * la información de la casilla i
          */
+
         for(i=0 ; i<arreglo.length ; i++)
         {
             registro = (Pieza) arreglo[i];
             //se arma el formato en la cadena
+
+         // if (i==0)
+            //ingreso el id primero
+         //  cadena = cadena+registro.getID()+"-";
+
             if (i != (arreglo.length - 1) )
-            cadena = (cadena+registro.getPintaSuperior()+"-"+registro.getPintainferior()+":");
+            cadena = (cadena+registro.getID()+"-"+registro.getPintaSuperior()+"-"+registro.getPintainferior()+"-"+
+                    registro.getImagenpintaS()+"-"+registro.getImagenpintaIn()+"-"+registro.getImagenpintaD()
+                    +"-"+registro.getImagenpintaIz()+":");
             else
-            cadena = (cadena+registro.getPintaSuperior()+"-"+registro.getPintainferior());
+            cadena = (cadena+registro.getID()+"-"+registro.getPintaSuperior()+"-"+registro.getPintainferior()+"-"+
+                    registro.getImagenpintaS()+"-"+registro.getImagenpintaIn()+"-"+registro.getImagenpintaD()
+                    +"-"+registro.getImagenpintaIz());
 
         }
 

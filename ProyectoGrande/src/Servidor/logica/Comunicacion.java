@@ -85,6 +85,7 @@ public class Comunicacion {
 
    public static String nuevaPartida(String nick, String inicio)
    {
+       
        Calendar begin = Calendar.getInstance();
        /*String[] fecha = inicio.split("/");
        int dia = Integer.parseInt(fecha[0]);
@@ -115,13 +116,17 @@ public class Comunicacion {
        nueva_partida.setFecha_inicio(inicio);
 
        //reparte las piezas a cada elemento en la partida (pote , makina , jugador)
-       Lista_Pieza repartio = nueva_partida.repartirPieza();
+
+
+       //EL PROBLEMA ESTA AQUI TOTY
+      // System.out.println("VA A CORRER REPARTIR PIEZA");
+       Lista_Pieza repartio = nueva_partida.repartirPieza();//devuelve la lista de piezas del jugador
 
        //retorna la lista de piezas de la makina
        Lista_Pieza pc = nueva_partida.obtenerPiezasRestantes(1);
 
        //retorna la lista de piezas del pote
-       Lista_Pieza pote = nueva_partida.obtenerPiezasRestantes(0);
+      Lista_Pieza pote = nueva_partida.obtenerPiezasRestantes(0);
 
        //se crea una lista nueva
        ListaPartida  L_partida = new ListaPartida();
@@ -147,8 +152,8 @@ public class Comunicacion {
       //------------------------
 
       //se devuelven las piezas del jugador
-      return nueva_partida.listaDePiezas();
-
+    //  return nueva_partida.listaDePiezas();
+    return repartio.ObtenerPiezasCadena();
 
    }
 

@@ -160,6 +160,10 @@ public class VentanaInicio extends javax.swing.JFrame {
         }
         else
         {
+                //para que las otras operacion se hagan con base a este usuario con este nick
+                SesionAbierta.Nick_sesion = a;
+                //-----------------------------------------------------
+
                 String resultado = ComunicacionCliente.peticionServidor("1:" + a + ":" + b, 1);
                 System.out.println(resultado);
                 if (resultado.length() == 5)

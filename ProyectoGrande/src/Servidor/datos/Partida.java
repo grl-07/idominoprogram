@@ -99,7 +99,14 @@ public class Partida {
         Lista_Pieza Piezas = new Lista_Pieza();
         Piezas.llenar();
         Piezas.Shuffle();
-        Pieza agregada;
+        System.out.println("NUEVAAAAA ENTRO DE REPARTIR");
+        Piezas.imprimirColeccion();
+        //PRUEBA
+      //  Pieza agregada = Piezas.obtenerPieza();
+        //------
+
+
+       Pieza agregada = new Pieza();
         for (i=0; i<=13; i++)
         {
             if (i < 7)
