@@ -109,7 +109,4 @@ public static List <Pieza> Obtener_piezas_precargadas(List <Pieza> l_piedras) {
     }
 
 
-
-  
-
 }

@@ -6,6 +6,7 @@
 package Servidor.logica;
 
 import Cliente.logica.SesionAbierta;
+import Servidor.datos.DatosXml_Cargados;
 import Servidor.datos.Jugador;
 import Servidor.datos.ListaJugador;
 import Servidor.datos.Lista_Pieza;
@@ -15,6 +16,7 @@ import com.toedter.calendar.JDateChooser;
 import java.util.Calendar;
 import java.util.Iterator;
 import javax.swing.*;
+//import ve.edu.ucab.server.logica.Servidor;
 
 /**
  *
@@ -162,7 +164,6 @@ public class Comunicacion {
        return Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nombre(nombre).getNickname();
    }
 
-
  //  public static String CargarPartida ( String nick ){
  //      Servidor.datos.Manejo_archivo.leerArchivoXML(listaDeJugador);
  //      Iterator x = listaDeJugador.buscar_jugador_nick(SesionAbierta.getNick_sesion()  ).getMis_partidas().getIterator();
@@ -180,6 +181,20 @@ public class Comunicacion {
 
  // Jugador Sesion_Abierta = new Jugador();
 
+/*
+ * Metodos para la comunicacion del Servidor con la partida que crea un Jugador
+ * se envian as piezas y se desarrollan las principales funciones que debe tener
+ * el usuario para poder interactuar en la Interfaz
+ */
+        private static String pathImagen = "/Cliente/presentacion/";
+        static Lista_Pieza lalista= new Lista_Pieza();
 
+        public static String obtenerImagenPieza(int posicion) {
+        String fuente;
 
+        fuente = pathImagen + lalista.obtenerPiezaindice(posicion);//  Datos.getListaDePiezasJugador().obtenerPieza(posicion).getImagenAsociadaActual();
+
+        return fuente;
+
+    }
 }

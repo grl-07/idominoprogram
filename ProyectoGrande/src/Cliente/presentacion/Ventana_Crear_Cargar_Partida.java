@@ -103,10 +103,11 @@ public class Ventana_Crear_Cargar_Partida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCrearr_PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearr_PActionPerformed
-        this.setVisible(false);
-        VentanaCrearPartida Ventana = new VentanaCrearPartida();
-        Ventana.setVisible(true);
         String resultado = ComunicacionCliente.peticionServidor("2:"+  Cliente.logica.SesionAbierta.Nick_sesion/*nickJugador*/ + ":12/01/10", 2);
+        this.setVisible(false);
+        VentanaCrearPartida Ventana = new VentanaCrearPartida(resultado);
+        Ventana.setVisible(true);
+        
         
         System.out.println(resultado);
 

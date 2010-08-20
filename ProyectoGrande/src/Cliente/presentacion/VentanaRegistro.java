@@ -107,7 +107,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +115,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
         });
 
-        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jBAtras.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jBAtras.setText("<< Atras");
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,11 +136,16 @@ public class VentanaRegistro extends javax.swing.JFrame {
         buttonGroup1.add(jRBJugadorRubia);
 
         buttonGroup1.add(jRBJugadorStewie);
+        jRBJugadorStewie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBJugadorStewieActionPerformed(evt);
+            }
+        });
 
         jDCFechaNaci.setDateFormatString("dd/MM/yy");
         jDCFechaNaci.setName("jDCFechaNaci"); // NOI18N
 
-        jLAvatar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jLAvatar.setFont(new java.awt.Font("Comic Sans MS", 0, 11));
         jLAvatar.setText("Avatar");
 
         jLJugadorHomero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente/presentacion/JugadorHomero.jpg"))); // NOI18N
@@ -161,7 +166,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(171, 171, 171)
-                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                .addComponent(jLTituloRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
                 .addGap(165, 165, 165))
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
@@ -237,7 +242,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLJugadorHomero, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addComponent(jLJugadorHomero, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                                 .addGap(28, 28, 28))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(11, 11, 11)
@@ -250,8 +255,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
                                         .addComponent(jLJugadorPlayera)
                                         .addGap(18, 18, 18)
                                         .addComponent(jRBJugadorPlayera))
-                                    .addComponent(jRBJugadorHomero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jRBJugadorHomero, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLStewie)
@@ -333,7 +337,7 @@ public class VentanaRegistro extends javax.swing.JFrame {
             }
             if (jRBJugadorStewie.isSelected())
             {
-                avatar = "JugadorHomero.jpg";
+                avatar = "JugadorStewie.jpg";
                 System.out.println("Avatar  "+avatar);
 
             }
@@ -399,6 +403,10 @@ public class VentanaRegistro extends javax.swing.JFrame {
        verVentana.setVisible(true);
 
     }//GEN-LAST:event_jBAtrasActionPerformed
+
+    private void jRBJugadorStewieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBJugadorStewieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBJugadorStewieActionPerformed
 
     /**
     * @param args the command line arguments

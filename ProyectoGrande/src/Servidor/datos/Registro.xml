@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Jugadores tipo="lista de Jugadores">
+  <Jugador>
+    <nombre>Diego</nombre>
+    <apellido>Vierma</apellido>
+    <fecha_nac>01/08/10</fecha_nac>
+    <score>0</score>
+    <cont_ingreso>1</cont_ingreso>
+    <partidas_creadas>1</partidas_creadas>
+    <partidas_ganadas>0</partidas_ganadas>
+    <nickname>demon</nickname>
+    <password>1234</password>
+    <avatar>JugadorSherk.jpg</avatar>
+    <Lista_Partidas>
+      <Partida>
+        <creador>demon</creador>
+        <id_partida>1</id_partida>
+        <fecha_inicio>12/01/10</fecha_inicio>
+        <fecha_actual />
+        <Piezas_jugador1>15-2-3-pintaS23.png-pintaIn23.png-pintaD23.png-pintaIz23.png:1-0-0-pintaS00.png-pintaIn00.png-pintaD00.png-pintaIz00.png:9-1-2-pintaS12.png-pintaIn12.png-pintaD12.png-pintaIz12.png:21-3-5-pintaS35.png-pintaIn35.png-pintaD35.png-pintaIz35.png:14-2-2-pintaS22.png-pintaIn22.png-pintaD22.png-pintaIz22.png:24-4-5-pintaS45.png-pintaIn45.png-pintaD45.png-pintaIz45.png:12-1-5-pintaS15.png-pintaIn15.png-pintaD15.png-pintaIz15.png</Piezas_jugador1>
+        <Piezas_jugador2>6-0-5-pintaS05.png-pintaIn05.png-pintaD05.png-pintaIz05.png:23-4-4-pintaS44.png-pintaIn44.png-pintaD44.png-pintaIz44.png:16-2-4-pintaS24.png-pintaIn24.png-pintaD24.png-pintaIz24.png:8-1-1-pintaS11.png-pintaIn11.png-pintaD11.png-pintaIz11.png:5-0-4-pintaS04.png-pintaIn04.png-pintaD04.png-pintaIz04.png:11-1-4-pintaS14.png-pintaIn14.png-pintaD14.png-pintaIz14.png:4-0-3-pintaS03.png-pintaIn03.png-pintaD03.png-pintaIz03.png</Piezas_jugador2>
+        <Piezas_pote>7-0-6-pintaS06.png-pintaIn06.png-pintaD06.png-pintaIz06.png:26-5-5-pintaS55.png-pintaIn55.png-pintaD55.png-pintaIz55.png:13-1-6-pintaS16.png-pintaIn16.png-pintaD16.png-pintaIz16.png:22-3-6-pintaS36.png-pintaIn36.png-pintaD36.png-pintaIz36.png:27-5-6-pintaS56.png-pintaIn56.png-pintaD56.png-pintaIz56.png:19-3-3-pintaS33.png-pintaIn33.png-pintaD33.png-pintaIz33.png:18-2-6-pintaS26.png-pintaIn26.png-pintaD26.png-pintaIz26.png:17-2-5-pintaS25.png-pintaIn25.png-pintaD25.png-pintaIz25.png:2-0-1-pintaS01.png-pintaIn01.png-pintaD01.png-pintaIz01.png:20-3-4-pintaS34.png-pintaIn34.png-pintaD34.png-pintaIz34.png:10-1-3-pintaS13.png-pintaIn13.png-pintaD13.png-pintaIz13.png:25-4-6-pintaS46.png-pintaIn46.png-pintaD46.png-pintaIz46.png:3-0-2-pintaS02.png-pintaIn02.png-pintaD02.png-pintaIz02.png:28-6-6-pintaS66.png-pintaIn66.png-pintaD66.png-pintaIz66.png</Piezas_pote>
+      </Partida>
+    </Lista_Partidas>
+  </Jugador>
+</Jugadores>
+

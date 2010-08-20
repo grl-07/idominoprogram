@@ -5,253 +5,253 @@
         <ID>1</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>0</Valor_Inferior>
-        <imagen_arriba>pintaS0-0.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-0.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-0.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-0.png</imagen_derecha>
+        <imagen_arriba>pintaS00.png</imagen_arriba>
+        <imagen_abajo>pintaIn00.png</imagen_abajo>
+        <imagen_izquierda>pintaIz00.png</imagen_izquierda>
+        <imagen_derecha>pintaD00.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>2</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>1</Valor_Inferior>
-        <imagen_arriba>pintaS0-1.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-1.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-1.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-1.png</imagen_derecha>
+        <imagen_arriba>pintaS01.png</imagen_arriba>
+        <imagen_abajo>pintaIn01.png</imagen_abajo>
+        <imagen_izquierda>pintaIz01.png</imagen_izquierda>
+        <imagen_derecha>pintaD01.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>3</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>2</Valor_Inferior>
-        <imagen_arriba>pintaS0-2.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-2.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-2.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-2.png</imagen_derecha>
+        <imagen_arriba>pintaS02.png</imagen_arriba>
+        <imagen_abajo>pintaIn02.png</imagen_abajo>
+        <imagen_izquierda>pintaIz02.png</imagen_izquierda>
+        <imagen_derecha>pintaD02.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>4</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>3</Valor_Inferior>
-        <imagen_arriba>pintaS0-3.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-3.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-3.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-3.png</imagen_derecha>
+        <imagen_arriba>pintaS03.png</imagen_arriba>
+        <imagen_abajo>pintaIn03.png</imagen_abajo>
+        <imagen_izquierda>pintaIz03.png</imagen_izquierda>
+        <imagen_derecha>pintaD03.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>5</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>4</Valor_Inferior>
-        <imagen_arriba>pintaS0-4.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-4.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-4.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-4.png</imagen_derecha>
+        <imagen_arriba>pintaS04.png</imagen_arriba>
+        <imagen_abajo>pintaIn04.png</imagen_abajo>
+        <imagen_izquierda>pintaIz04.png</imagen_izquierda>
+        <imagen_derecha>pintaD04.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>6</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS0-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-5.png</imagen_derecha>
+        <imagen_arriba>pintaS05.png</imagen_arriba>
+        <imagen_abajo>pintaIn05.png</imagen_abajo>
+        <imagen_izquierda>pintaIz05.png</imagen_izquierda>
+        <imagen_derecha>pintaD05.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>7</ID>
         <Valor_Superior>0</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS0-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn0-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz0-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD0-6.png</imagen_derecha>
+        <imagen_arriba>pintaS06.png</imagen_arriba>
+        <imagen_abajo>pintaIn06.png</imagen_abajo>
+        <imagen_izquierda>pintaIz06.png</imagen_izquierda>
+        <imagen_derecha>pintaD06.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>8</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>1</Valor_Inferior>
-        <imagen_arriba>pintaS1-1.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-1.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-1.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-1.png</imagen_derecha>
+        <imagen_arriba>pintaS11.png</imagen_arriba>
+        <imagen_abajo>pintaIn11.png</imagen_abajo>
+        <imagen_izquierda>pintaIz11.png</imagen_izquierda>
+        <imagen_derecha>pintaD11.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>9</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>2</Valor_Inferior>
-        <imagen_arriba>pintaS1-2.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-2.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-2.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-2.png</imagen_derecha>
+        <imagen_arriba>pintaS12.png</imagen_arriba>
+        <imagen_abajo>pintaIn12.png</imagen_abajo>
+        <imagen_izquierda>pintaIz12.png</imagen_izquierda>
+        <imagen_derecha>pintaD12.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>10</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>3</Valor_Inferior>
-        <imagen_arriba>pintaS1-3.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-3.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-3.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-3.png</imagen_derecha>
+        <imagen_arriba>pintaS13.png</imagen_arriba>
+        <imagen_abajo>pintaIn13.png</imagen_abajo>
+        <imagen_izquierda>pintaIz13.png</imagen_izquierda>
+        <imagen_derecha>pintaD13.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>11</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>4</Valor_Inferior>
-        <imagen_arriba>pintaS1-4.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-4.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-4.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-4.png</imagen_derecha>
+        <imagen_arriba>pintaS14.png</imagen_arriba>
+        <imagen_abajo>pintaIn14.png</imagen_abajo>
+        <imagen_izquierda>pintaIz14.png</imagen_izquierda>
+        <imagen_derecha>pintaD14.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>12</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS1-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-5.png</imagen_derecha>
+        <imagen_arriba>pintaS15.png</imagen_arriba>
+        <imagen_abajo>pintaIn15.png</imagen_abajo>
+        <imagen_izquierda>pintaIz15.png</imagen_izquierda>
+        <imagen_derecha>pintaD15.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>13</ID>
         <Valor_Superior>1</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS1-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn1-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz1-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD1-6.png</imagen_derecha>
+        <imagen_arriba>pintaS16.png</imagen_arriba>
+        <imagen_abajo>pintaIn16.png</imagen_abajo>
+        <imagen_izquierda>pintaIz16.png</imagen_izquierda>
+        <imagen_derecha>pintaD16.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>14</ID>
         <Valor_Superior>2</Valor_Superior>
         <Valor_Inferior>2</Valor_Inferior>
-        <imagen_arriba>pintaS2-2.png</imagen_arriba>
-        <imagen_abajo>pintaIn2-2.png</imagen_abajo>
-        <imagen_izquierda>pintaIz2-2.png</imagen_izquierda>
-        <imagen_derecha>pintaD2-2.png</imagen_derecha>
+        <imagen_arriba>pintaS22.png</imagen_arriba>
+        <imagen_abajo>pintaIn22.png</imagen_abajo>
+        <imagen_izquierda>pintaIz22.png</imagen_izquierda>
+        <imagen_derecha>pintaD22.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>15</ID>
         <Valor_Superior>2</Valor_Superior>
         <Valor_Inferior>3</Valor_Inferior>
-        <imagen_arriba>pintaS2-3.png</imagen_arriba>
-        <imagen_abajo>pintaIn2-3.png</imagen_abajo>
-        <imagen_izquierda>pintaIz2-3.png</imagen_izquierda>
-        <imagen_derecha>pintaD2-3.png</imagen_derecha>
+        <imagen_arriba>pintaS23.png</imagen_arriba>
+        <imagen_abajo>pintaIn23.png</imagen_abajo>
+        <imagen_izquierda>pintaIz23.png</imagen_izquierda>
+        <imagen_derecha>pintaD23.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>16</ID>
         <Valor_Superior>2</Valor_Superior>
         <Valor_Inferior>4</Valor_Inferior>
-        <imagen_arriba>pintaS2-4.png</imagen_arriba>
-        <imagen_abajo>pintaIn2-4.png</imagen_abajo>
-        <imagen_izquierda>pintaIz2-4.png</imagen_izquierda>
-        <imagen_derecha>pintaD2-4.png</imagen_derecha>
+        <imagen_arriba>pintaS24.png</imagen_arriba>
+        <imagen_abajo>pintaIn24.png</imagen_abajo>
+        <imagen_izquierda>pintaIz24.png</imagen_izquierda>
+        <imagen_derecha>pintaD24.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>17</ID>
         <Valor_Superior>2</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS2-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn2-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz2-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD2-5.png</imagen_derecha>
+        <imagen_arriba>pintaS25.png</imagen_arriba>
+        <imagen_abajo>pintaIn25.png</imagen_abajo>
+        <imagen_izquierda>pintaIz25.png</imagen_izquierda>
+        <imagen_derecha>pintaD25.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>18</ID>
         <Valor_Superior>2</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS2-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn2-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz2-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD2-6.png</imagen_derecha>
+        <imagen_arriba>pintaS26.png</imagen_arriba>
+        <imagen_abajo>pintaIn26.png</imagen_abajo>
+        <imagen_izquierda>pintaIz26.png</imagen_izquierda>
+        <imagen_derecha>pintaD26.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>19</ID>
         <Valor_Superior>3</Valor_Superior>
         <Valor_Inferior>3</Valor_Inferior>
-        <imagen_arriba>pintaS3-3.png</imagen_arriba>
-        <imagen_abajo>pintaIn3-3.png</imagen_abajo>
-        <imagen_izquierda>pintaIz3-3.png</imagen_izquierda>
-        <imagen_derecha>pintaD3-3.png</imagen_derecha>
+        <imagen_arriba>pintaS33.png</imagen_arriba>
+        <imagen_abajo>pintaIn33.png</imagen_abajo>
+        <imagen_izquierda>pintaIz33.png</imagen_izquierda>
+        <imagen_derecha>pintaD33.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>20</ID>
         <Valor_Superior>3</Valor_Superior>
         <Valor_Inferior>4</Valor_Inferior>
-        <imagen_arriba>pintaS3-4.png</imagen_arriba>
-        <imagen_abajo>pintaIn3-4.png</imagen_abajo>
-        <imagen_izquierda>pintaIz3-4.png</imagen_izquierda>
-        <imagen_derecha>pintaD3-4.png</imagen_derecha>
+        <imagen_arriba>pintaS34.png</imagen_arriba>
+        <imagen_abajo>pintaIn34.png</imagen_abajo>
+        <imagen_izquierda>pintaIz34.png</imagen_izquierda>
+        <imagen_derecha>pintaD34.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>21</ID>
         <Valor_Superior>3</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS3-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn3-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz3-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD3-5.png</imagen_derecha>
+        <imagen_arriba>pintaS35.png</imagen_arriba>
+        <imagen_abajo>pintaIn35.png</imagen_abajo>
+        <imagen_izquierda>pintaIz35.png</imagen_izquierda>
+        <imagen_derecha>pintaD35.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>22</ID>
         <Valor_Superior>3</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS3-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn3-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz3-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD3-6.png</imagen_derecha>
+        <imagen_arriba>pintaS36.png</imagen_arriba>
+        <imagen_abajo>pintaIn36.png</imagen_abajo>
+        <imagen_izquierda>pintaIz36.png</imagen_izquierda>
+        <imagen_derecha>pintaD36.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>23</ID>
         <Valor_Superior>4</Valor_Superior>
         <Valor_Inferior>4</Valor_Inferior>
-        <imagen_arriba>pintaS4-4.png</imagen_arriba>
-        <imagen_abajo>pintaIn4-4.png</imagen_abajo>
-        <imagen_izquierda>pintaIz4-4.png</imagen_izquierda>
-        <imagen_derecha>pintaD4-4.png</imagen_derecha>
+        <imagen_arriba>pintaS44.png</imagen_arriba>
+        <imagen_abajo>pintaIn44.png</imagen_abajo>
+        <imagen_izquierda>pintaIz44.png</imagen_izquierda>
+        <imagen_derecha>pintaD44.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>24</ID>
         <Valor_Superior>4</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS4-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn4-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz4-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD4-5.png</imagen_derecha>
+        <imagen_arriba>pintaS45.png</imagen_arriba>
+        <imagen_abajo>pintaIn45.png</imagen_abajo>
+        <imagen_izquierda>pintaIz45.png</imagen_izquierda>
+        <imagen_derecha>pintaD45.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>25</ID>
         <Valor_Superior>4</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS4-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn4-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz4-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD4-6.png</imagen_derecha>
+        <imagen_arriba>pintaS46.png</imagen_arriba>
+        <imagen_abajo>pintaIn46.png</imagen_abajo>
+        <imagen_izquierda>pintaIz46.png</imagen_izquierda>
+        <imagen_derecha>pintaD46.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>26</ID>
         <Valor_Superior>5</Valor_Superior>
         <Valor_Inferior>5</Valor_Inferior>
-        <imagen_arriba>pintaS5-5.png</imagen_arriba>
-        <imagen_abajo>pintaIn5-5.png</imagen_abajo>
-        <imagen_izquierda>pintaIz5-5.png</imagen_izquierda>
-        <imagen_derecha>pintaD5-5.png</imagen_derecha>
+        <imagen_arriba>pintaS55.png</imagen_arriba>
+        <imagen_abajo>pintaIn55.png</imagen_abajo>
+        <imagen_izquierda>pintaIz55.png</imagen_izquierda>
+        <imagen_derecha>pintaD55.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>27</ID>
         <Valor_Superior>5</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS5-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn5-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz5-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD5-6.png</imagen_derecha>
+        <imagen_arriba>pintaS56.png</imagen_arriba>
+        <imagen_abajo>pintaIn56.png</imagen_abajo>
+        <imagen_izquierda>pintaIz56.png</imagen_izquierda>
+        <imagen_derecha>pintaD56.png</imagen_derecha>
     </pieza>
     <pieza>
         <ID>28</ID>
         <Valor_Superior>6</Valor_Superior>
         <Valor_Inferior>6</Valor_Inferior>
-        <imagen_arriba>pintaS6-6.png</imagen_arriba>
-        <imagen_abajo>pintaIn6-6.png</imagen_abajo>
-        <imagen_izquierda>pintaIz6-6.png</imagen_izquierda>
-        <imagen_derecha>pintaD6-6.png</imagen_derecha>
+        <imagen_arriba>pintaS66.png</imagen_arriba>
+        <imagen_abajo>pintaIn66.png</imagen_abajo>
+        <imagen_izquierda>pintaIz66.png</imagen_izquierda>
+        <imagen_derecha>pintaD66.png</imagen_derecha>
     </pieza>
 </piezas>
 
