@@ -20,6 +20,12 @@ public class Gestion_Juego implements LogicaServidor
                 return crearPartida(datos);
             if (opcion == 3)
                 return registroUsuario(datos);
+            if (opcion==5) 
+            {
+                System.out.println(cadena);
+                return "FALSE:x1-y1:1-1:imagenArriba-imagenAbajo-imagenIzquierda-imagenDerecha:pintaS25";
+            }
+
 
             
 

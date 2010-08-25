@@ -98,6 +98,7 @@ public void InsertarPiedraCadenaRuta (String rutaImagen){
       Cadena = rutaImagen.split("png");
       NombreImagen = Cadena[0];
 
+      System.out.println("Luego del split" + NombreImagen);
       //agarra el numero
        // x = rutaImagen.charAt(NombreImagen.length() - 3);
 

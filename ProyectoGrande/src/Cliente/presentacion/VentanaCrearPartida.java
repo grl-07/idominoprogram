@@ -1132,23 +1132,81 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
             PiedraEnTablero PiedraTemp = new PiedraEnTablero();
     
            PiedraTemp.InsertarPiedraCadenaRuta(NombreImagen);
+
+            System.out.println("que mieerdaaaa "+NombreImagen);
             //posicion del botn receptor de pieza (4-4 ,3-4 ...)
             String PosicionString = boton.getName();
 
             boolean resultado; 
-            resultado = Cliente.datos.TableroPermanente.ValidacionGeneral(PiedraTemp, PosicionString);
+            resultado = Cliente.logica.Manejo_Tablero.ValidacionGeneral(PiedraTemp, PosicionString);
            
 
         if (resultado == true){
-            PiedraTemp=Cliente.datos.TableroPermanente.ReubicacionPuntas(PiedraTemp);
+            PiedraTemp=Cliente.logica.Manejo_Tablero.ReubicacionPuntas(PiedraTemp);
 
             boton.setIcon(botonSeleccionado.getIcon());
-            Cliente.datos.TableroPermanente.insertarPiedraBotonEnTablero(PiedraTemp,PosicionString);
+            Cliente.logica.Manejo_Tablero.insertarPiedraBotonEnTablero(PiedraTemp, PosicionString);
+            
             botonSeleccionado.setIcon(null);
             botonSeleccionado.setEnabled(false);
             botonSeleccionado = null;
 
+            //envia la jugada y resive en jugada servidor
+          String JugadaServidor =  ComunicacionCliente.peticionServidor("5:"+Cliente.logica.SesionAbierta.Nick_sesion+":"+
+                     PiedraTemp.getNumUno()+"-"+PiedraTemp.getNumDos()+";"+
+                          Cliente.logica.Manejo_Tablero.ConversionPosicionCadenaA(PosicionString, 1)
+                        +"-"+ Cliente.logica.Manejo_Tablero.ConversionPosicionCadenaA(PosicionString, 2)+":"+NombreImagen,555);
+          
+          //pone en fragmentos el mensaje
+          String [] Fragmento = new String [2];
+          PiedraTemp = new PiedraEnTablero();
+          Fragmento = JugadaServidor.split(":");
+          //crea la peidra temporal del servidor
+
+          if (Fragmento [0].equals("FALSE")==false){
+
+
+            System.out.println("este fragmentee " +Fragmento[1]+".png");
+          PiedraTemp.InsertarPiedraCadenaRuta(Fragmento[1]+".png"); //Fragmento 1 tiene el nombre de la imagen
+           
+          //hace la validacion de la jugada del servidor
+          
+          resultado = Cliente.logica.Manejo_Tablero.ValidacionGeneral(PiedraTemp,Fragmento[0]);
+          PiedraTemp=Cliente.logica.Manejo_Tablero.ReubicacionPuntas(PiedraTemp);  
+          
+          
+          String path = "/Cliente/presentacion/";
+          path += (Fragmento[1]+".png");
+
+           final JButton arregloBotones[][] = {
+                                               {jB00, jB01, jB02, jB03, jB04, jB05, jB06, jB07, jB08, jB09},
+                                               {jB10, jB11, jB12, jB13, jB14, jB15, jB16, jB17, jB18, jB19},
+                                               {jB20, jB21, jB22, jB23, jB24, jB25, jB26, jB27, jB28, jB29},
+                                               {jB30, jB31, jB32, jB33, jB34, jB35, jB36, jB37, jB38, jB39},
+                                               {jB40, jB41, jB42, jB43, jB44, jB45, jB46, jB47, jB48, jB49},
+                                               {jB50, jB51, jB52, jB53, jB54, jB55, jB56, jB57, jB58, jB59}
+                                           };
+
+        JButton botonActual = null;
+
+        for (i=0 ; i<6 ; i++)
+            for (j=0 ; j<10 ; j++)
+            {
+
+                if (arregloBotones[i][j].getName().equals(Fragmento[0]))
+                {
+                    arregloBotones[i][j].setIcon( new javax.swing.ImageIcon(getClass().getResource(path))); //lo dle if
+                }
             }
+            }// del retorno del servidor
+          else //si el servidor retorna falso
+          {
+              JOptionPane.showMessageDialog(this,"EL SERVIDOR PASA");
+          }
+
+
+            }//del if principal improtante
+
         else
             JOptionPane.showMessageDialog(this,"MOVIMIENTO INCORRECTO ,INTENTE DE NUEVO");
                 
@@ -1168,6 +1226,7 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
 
     private void CargarNuevoTablero()
     {
+
         //int i,j;
      
         final JButton arregloBotones[][] = {

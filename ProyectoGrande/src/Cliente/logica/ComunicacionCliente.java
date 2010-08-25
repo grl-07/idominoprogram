@@ -27,8 +27,32 @@ public static String ip= "";
             return cliente.ejecutarPeticion(peticion, ip, 7687);
         if (IDpeticion == 100)
             return cliente.ejecutarPeticion(peticion, ip, 7687);
-        return "hola";
-     }
+      
+     //al enviar una jugada
+        if (IDpeticion == 555){
+
+            String[] Cadena = new String [5];
+            Cadena = cliente.ejecutarPeticion(peticion, ip, 7687).split(":");
+
+
+            String[] CadCorta = new String [3];
+            CadCorta[0]=Cadena[0];//si es true
+
+            
+           if ( CadCorta[0].equals("TRUE")) {
+                CadCorta[1]=Cadena[2];
+                CadCorta[2]=Cadena[4];
+                return (CadCorta[1]+":"+CadCorta[2]); 
+           
+            }  
+            else return ("FALSE:");
+            
+        }
+
+     return "cualquier cosa";
+    }
+
+
 
     public static Lista_Pieza obtenerLista (String piezas)
     {
