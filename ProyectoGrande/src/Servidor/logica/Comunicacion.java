@@ -159,6 +159,23 @@ public class Comunicacion {
 
    }
 
+ public static Lista_Pieza getListaPote (String nickname)
+   {
+      ListaPartida aux = Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nickname).getMis_partidas();
+
+
+      Iterator x = aux.getIterator();
+
+      Partida UltimaPartida = (Partida) x.next();
+
+      Lista_Pieza pote = UltimaPartida.obtenerPiezasRestantes(0);
+      //System.out.println("probando imprimiendo el pote");
+      //pote.imprimirColeccion();
+
+      return pote;
+
+   }
+
 
    public static String obtenerNickJugador(String nombre){
        return Servidor.datos.DatosXml_Cargados.listaDeJugador.buscar_jugador_nombre(nombre).getNickname();

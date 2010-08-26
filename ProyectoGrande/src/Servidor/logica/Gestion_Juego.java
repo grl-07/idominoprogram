@@ -1,11 +1,14 @@
 package Servidor.logica;
 
-
+import Servidor.datos.Pieza;
 import Servidor.datos.Jugador;
 //import Servidor.logica.Comunicacion;
 import java.util.Calendar;
 import ve.edu.ucab.server.logica.LogicaServidor;
-
+import Servidor.datos.DatosXml_Cargados;
+import Servidor.datos.ListaPartida;
+import Servidor.datos.Partida;
+import java.util.Iterator;
 
 public class Gestion_Juego implements LogicaServidor
 {
@@ -20,25 +23,20 @@ public class Gestion_Juego implements LogicaServidor
                 return crearPartida(datos);
             if (opcion == 3)
                 return registroUsuario(datos);
+             if (opcion == 4)
+                return guardarPartida(datos);
             if (opcion==5) 
             {
-                System.out.println(cadena);
-                return "FALSE:x1-y1:1-1:imagenArriba-imagenAbajo-imagenIzquierda-imagenDerecha:pintaS25";
+               // System.out.println(cadena);
+                System.out.println("El cliente envia " + cadena);
+              //  ServidorJugando.IntroducirEnvio(cadena);
+               //de prueba
+                return "FALSE:x1-y1:2-2:imagenArriba-imagenAbajo-imagenIzquierda-imagenDerecha:pintaS25";
             }
-
+            if (opcion == 7)
+                return agarrarPote(datos);
 
             
-
-            /*if (opcion == 4)
-                //return guardarPartida(datos);
-            if (opcion == 5)
-                //return enviarJugada(datos);
-            if (opcion == 6)
-                //return finPartida(datos);
-            if (opcion == 7)*/
-                //return agarrarDelPote(datos);
-          // if (opcion == 8)
-          //     return obtenerNick(datos);
         return "FALSE";
         }
 
@@ -113,7 +111,36 @@ public class Gestion_Juego implements LogicaServidor
 
            return "FALSE";
         }
-        
+
+
+         public String agarrarPote(String [] datos)
+        {
+            String nickname = datos [1];
+
+            System.out.println("voy a imprimir en agarrar pote");
+
+            //Comunicacion.getListaPote(nickname).imprimirPiezas
+             ListaPartida partidas = DatosXml_Cargados.listaDeJugador.buscar_jugador_nick(nickname).getMis_partidas() ;
+             Iterator iteradorPartida = partidas.getIterator();
+             Partida PartJugador = (Partida)iteradorPartida.next();
+             Pieza PiezaDelPote = PartJugador.getPote().obtenerPiezaindice(0);
+
+             
+             if (PartJugador.getPote().ListaVacia()==true) return "null";
+             if (PartJugador.getPote().ListaVacia()==false) {
+                 
+                PartJugador.getPote().quitarPieza(PiezaDelPote);
+                PartJugador.getJugador1().agregarPieza(PiezaDelPote);
+
+                Servidor.datos.Manejo_archivo.guardarJugadorXML(Servidor.datos.DatosXml_Cargados.listaDeJugador,partidas);
+
+            }
+                 
+            return (PiezaDelPote.PiezaEnCadena());
+        }
+
+
+
         public String crearPartida(String[] datos)
         {
             String nick = datos[1];

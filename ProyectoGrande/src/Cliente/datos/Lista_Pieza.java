@@ -48,7 +48,10 @@ public class Lista_Pieza {
     } */
 
 
-    
+     public boolean quitarPieza(Pieza objeto)
+    {
+        return miListaPieza.remove(objeto);
+    }
 
 
 
@@ -85,6 +88,28 @@ public class Lista_Pieza {
         return pieza;
     }
 
+ public void imprimirColeccion()
+    {
+        int i;
+        Pieza registro;
+
+        Object [] arreglo;
+
+        arreglo = miListaPieza.toArray();
+
+        System.out.println("Piezas");
+
+        for(i=0 ; i<arreglo.length ; i++)
+        {
+            registro = (Pieza) arreglo[i];
+            System.out.println("Pinta cliente superior: " + registro.getPintaSuperior());
+            System.out.println("Pinta cliente inferior: " + registro.getPintainferior());
+            System.out.println("imagen cliente : "+ registro.getImagenpintaD());
+            System.out.println();
+        }
+
+        System.out.println("\n\n");
+    }
 
 
 

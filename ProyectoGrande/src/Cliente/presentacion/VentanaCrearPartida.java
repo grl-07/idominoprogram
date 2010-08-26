@@ -18,7 +18,7 @@ package Cliente.presentacion;
 import Cliente.datos.Lista_Pieza;
 import Cliente.datos.Pieza;
 import Cliente.logica.ComunicacionCliente;
-import Servidor.logica.Comunicacion;
+//import Servidor.logica.Comunicacion;
 import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.JButton;
@@ -31,6 +31,10 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
        int i,j;
        JButton botonSeleccionado;
        String piezas;
+       String piezasPote;
+       static Lista_Pieza ListaDelPote = new Lista_Pieza();
+       static Lista_Pieza ListaPiezasJugador = new Lista_Pieza();
+       static int ToquePote = 0;
         //inicializando la variable Tablero
           {
                for (int f = 0; f < 8; f++){
@@ -38,13 +42,10 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
                    Cliente.datos.TableroPermanente.Tablero[f][g]=new PiedraEnTablero();
               }
                }
-          }
-
-
-
+    }
 
     /** Creates new form VentanaCrearPartida */
-    public VentanaCrearPartida(String piezas) {
+    public VentanaCrearPartida(String piezas) { //aqui recibe las peizas del jugador
         this.piezas = piezas;
         initComponents();
         CargarNuevoTablero();
@@ -1219,8 +1220,13 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
     private void jButton78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton78ActionPerformed
         // TODO add your handling code here:
   //      String piezaPote;
+       
+        String pote = ComunicacionCliente.peticionServidor("7:" + Cliente.logica.SesionAbierta.Nick_sesion, 3);
 
-    //   piezaPote= ;
+        if(pote==null ? "null" == null : pote.equals("null")) jButton78.setEnabled(false);
+
+        CargarPiezasDelPote(pote);
+      
     }//GEN-LAST:event_jButton78ActionPerformed
 
 
@@ -1259,40 +1265,115 @@ public class VentanaCrearPartida extends javax.swing.JFrame {
 
     private void CargarNuevasPiezasAlJugador()
     {
-        Lista_Pieza listaJugador = ComunicacionCliente.obtenerLista(piezas);
+        ListaPiezasJugador = ComunicacionCliente.obtenerLista(piezas);
         Pieza nueva;
 
+
+
         final JButton arregloBotones[] = { jBPieza0, jBPieza1, jBPieza2, jBPieza3, jBPieza4, jBPieza5, jBPieza6,
-                                          jBPiezaPote0, jBPiezaPote1, jBPiezaPote2, jBPiezaPote3, jBPiezaPote4,
-                                          jBPiezaPote5, jBPiezaPote6, jBPiezaPote7, jBPiezaPote8};
+                                           jBPiezaPote0, jBPiezaPote1, jBPiezaPote2, jBPiezaPote3, jBPiezaPote4,
+                                           jBPiezaPote5, jBPiezaPote6, jBPiezaPote7, jBPiezaPote8}; 
+
         JButton botonActual= null;
 
-        for (i=0 ; i<16 ; i++)
+        for (i=0 ; i<7 ; i++)
         {
-           botonActual = arregloBotones[i];
-           if (i< 7)
-           {
 
+                botonActual = arregloBotones[i];
+      
                 String path = "/Cliente/presentacion/";
                 //obtiene cada pieza
-                nueva = listaJugador.obtenerPiezaindice(i);
+               nueva = ListaPiezasJugador.obtenerPiezaindice(i);
+            //   System.out.println("va por el indice "+i);
+           //    System.out.println(nueva.getPintaSuperior());
                 //saca el nombre de la imagen
-                path += nueva.getImagenpintaS();
-                //prueba
-                System.out.println("path: " + path);
+                path += nueva.getImagenpintaS(); //el problema esta aqui
                 //le isnerta el iconoc al boton actual , la imagen
-                botonActual.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+               botonActual.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
                 //habilita el boton
                 botonActual.setEnabled(true);
                 //ademas en el nombre del botn le paso el nombre del path
-                botonActual.setName(nueva.getImagenpintaS());
+                botonActual.setName(nueva.getImagenpintaS()); 
+         }
+
+        for (i=7 ; i<arregloBotones.length ;i++){
+            botonActual=arregloBotones[i];
+            botonActual.setIcon(null);
+            botonActual.setFocusable(false);
+            botonActual.setEnabled(false);
+
+        }
+       
+    }
+
+
+
+public void CargarPiezasDelPote(String piezapote)
+
+    {
+      //  if (ListaPiezasJugador.dimension()!=16){
+        boolean enable=false;
+        this.piezasPote = piezapote;
+        //devolvera una sola pieza del pote
+        Pieza PiezaPote = ComunicacionCliente.obtenerPieza(piezasPote);
+        Pieza piezanueva;
+
+        //ListaPote.imprimirColeccion();
+        ListaPiezasJugador.agregarPieza(PiezaPote);
+        System.out.println("imprimo despues de agregar ficha del pote");
+        ListaPiezasJugador.imprimirColeccion();
+
+        piezanueva = PiezaPote;
+
+//        Lista_Pieza ListaJugador = ComunicacionCliente.obtenerLista(piezas);
+  //      ListaJugador.agregarPieza(piezanueva);
+     //   System.out.println("IMPRIMIR LISTA JUGADOR YA EN CARGAR PIEZAS DEL POTE");
+   //     ListaJugador.dimension();
+
+        final JButton arregloBotones[] = { jBPieza0, jBPieza1, jBPieza2, jBPieza3, jBPieza4, jBPieza5, jBPieza6,
+                                           jBPiezaPote0, jBPiezaPote1, jBPiezaPote2, jBPiezaPote3, jBPiezaPote4,
+                                           jBPiezaPote5, jBPiezaPote6, jBPiezaPote7, jBPiezaPote8};
+
+        System.out.println(ListaPiezasJugador.dimension() + " dimension");
+        JButton botonActual= null;
+
+    /* antes de diego        {
+            botonActual = arregloBotones[ListaPiezasJugador.dimension()-1];
+
+           //<>
+                String path = "/Cliente/presentacion/";
+                path += piezanueva.getImagenpintaS();
+                //System.out.println("path: " + path);
+                botonActual.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+                botonActual.setEnabled(true);
+                //ademas en el nombre del botn le paso el nombre del path
+                botonActual.setName(piezanueva.getImagenpintaS());
+            }     */
+
+        for (i= 0 ; i<16 ; i++){
+
+            botonActual = arregloBotones[i];
+
+            if (botonActual.isEnabled()==false){
+                String path = "/Cliente/presentacion/";
+                path += piezanueva.getImagenpintaS();
+                //System.out.println("path: " + path);
+                botonActual.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+                botonActual.setEnabled(true);
+                //ademas en el nombre del botn le paso el nombre del path
+                botonActual.setName(piezanueva.getImagenpintaS());
+                enable = true;
             }
-            else
-              botonActual.setEnabled(false);
+             if (enable==true)
+                 break;
+
         }
 
-        jBPieza0.requestFocus();
+
+     //   }
+
     }
+
 
 
     /**

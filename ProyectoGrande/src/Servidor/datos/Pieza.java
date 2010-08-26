@@ -105,7 +105,17 @@ public class Pieza {
         this.pintainferior = pintainferior;
     }
 
+public String PiezaEnCadena()
+    {
+        String Cadena = "";
 
+        Cadena += String.valueOf(ID)+"-"+String.valueOf(pintaSuperior)+"-"+String.valueOf(pintainferior)+
+                "-"+imagenpintaS+"-"+imagenpintaIn+"-"+imagenpintaD+"-"+imagenpintaIz;
+
+
+        return Cadena;
+
+    }
 
 
 
